@@ -1,0 +1,3 @@
+rootProject.name = 'fansere_app'
+
+include ':app'
