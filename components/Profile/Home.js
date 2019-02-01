@@ -1,7 +1,8 @@
 import React from 'react'
 import {StyleSheet, Text, View, ScrollView, KeyboardAvoidingView} from 'react-native';
 import { Avatar } from 'react-native-elements';
-import { ButtonGroup   } from 'react-native-elements';
+import { ButtonGroup } from 'react-native-elements';
+import { Header } from 'react-native-elements';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -23,20 +24,28 @@ export default class Home extends React.Component {
     return (
       <View style={styles.container}>
 
-        <Text>Profile</Text>
+        <Header
+        placement="center"
+        centerComponent={{ text: 'Profile', style: { color: 'white', fontSize: 22 }}}
+        />
+
+        <Text style={styles.profileText} h1>Profile Username</Text>
 
         <Avatar size="large" onPress={() => console.log("Works!")}
           source={{
             uri:
               'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
           }}
+          showEditButton
         />
+
+        <Text style={styles.taglineText} h2>"Here goes a tagline"</Text>
 
         <ButtonGroup
           onPress={this.updateIndex}
           selectedIndex={selectedIndex}
           buttons={buttons}
-          containerStyle={{height: 50}}
+          containerStyle={{height: 30}}
         />
 
       </View>
@@ -46,8 +55,14 @@ export default class Home extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+    flex: 1,
     alignItems: 'center',
-    // justifyContent: 'center'
+  },
+  profileText: {
+    fontWeight: 'bold',
+    color: 'black',
+  },
+  taglineText: {
+    color: 'black',
   }
 })
