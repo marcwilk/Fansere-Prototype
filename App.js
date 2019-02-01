@@ -1,7 +1,7 @@
 
 import React, {Component} from 'react'
 import {Platform, StyleSheet, Text, View} from 'react-native'
-import Chat from './components/Chat'
+import { Nav } from './components/Router'
 
 
 type Props = {};
@@ -9,7 +9,7 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Chat />
+        <Nav />
       </View>
     );
   }
