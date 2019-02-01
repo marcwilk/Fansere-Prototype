@@ -11,7 +11,7 @@ export default class Chat extends React.Component {
       messages: [
         {
           user: "a",
-          message: "Yo yo yo you hyped for tha game"
+          message: "suh"
         },
         {
           user: "b",
@@ -19,19 +19,19 @@ export default class Chat extends React.Component {
         },
         {
           user: "a",
-          message: "whaaaaat"
-        },
-        {
-          user: "a",
-          message: "Yo yo yo you hyped for tha game"
+          message: "nm then"
         },
         {
           user: "b",
-          message: "new phone who dis"
+          message: "kewl"
         },
         {
           user: "a",
-          message: "whaaaaat"
+          message: "yeah"
+        },
+        {
+          user: "b",
+          message: "ya"
         },
       ],
       keyboardActive: false
