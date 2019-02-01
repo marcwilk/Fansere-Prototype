@@ -1,4 +1,4 @@
-
+//blah blah
 import React, {Component} from 'react'
 import {Platform, StyleSheet, Text, View} from 'react-native'
 import { Nav } from './components/Router'
@@ -14,6 +14,7 @@ export default class App extends Component<Props> {
     );
   }
 }
+
 
 const styles = StyleSheet.create({
   container: {
