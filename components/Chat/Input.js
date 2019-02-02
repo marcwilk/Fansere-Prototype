@@ -1,5 +1,6 @@
 import React from 'react'
 import {View, Text, TextInput, StyleSheet} from 'react-native'
+import { ListItem } from 'react-native-elements'
 
 
 export default class Input extends React.Component {
