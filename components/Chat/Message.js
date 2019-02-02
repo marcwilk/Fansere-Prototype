@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginLeft: 20,
     marginRight: 80,
+    borderWidth: 0.5,
     borderRadius: 15,
     backgroundColor: '#d3d3d3',
     padding: 10,
@@ -48,6 +49,7 @@ const styles = StyleSheet.create({
     marginLeft: 80,
     marginRight: 20,
     borderRadius: 15,
+    borderWidth: 0.5,
     backgroundColor: 'rgb(0, 120, 254)',
     padding: 10,
     overflow: 'hidden'
