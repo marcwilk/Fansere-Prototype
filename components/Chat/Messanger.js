@@ -1,7 +1,7 @@
 import React from 'react'
-import {StyleSheet, ScrollView } from 'react-native';
+import {StyleSheet, Text, View, ScrollView, KeyboardAvoidingView} from 'react-native';
 import Message from './Message'
-
+import Input from './Input'
 
 
 export default class Messanger extends React.Component {
@@ -11,16 +11,14 @@ export default class Messanger extends React.Component {
 
     }
   }
-
   render() {
     return (
-      <ScrollView style={styles.navHeight}>
-        {this.props.messages.map((message, i) => <Message info={message} key={i} name={this.props.name} />)}
-      </ScrollView>
+      <View>
+        <ScrollView>
+          {this.props.messages.map((message, i) => <Message info={message} key={i} />)}
+        </ScrollView>
+        <Input add={this.props.add}/>
+      </View>
     )
   }
 }
-
-const styles = StyleSheet.create({
-  navHeight: { marginBottom: 120}
-})

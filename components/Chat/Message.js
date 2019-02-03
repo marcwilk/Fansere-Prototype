@@ -9,7 +9,11 @@ export default class Message extends React.Component {
   }
 
   styleSelector(input) {
-    return input === this.props.name ? styles.a : styles.b
+    if (input === 'a') {
+      return styles.a
+    } else {
+      return styles.b
+    }
   }
 
   render() {
@@ -21,6 +25,7 @@ export default class Message extends React.Component {
   }
 }
 
+
 const styles = StyleSheet.create({
   a: {
     color: 'white',
@@ -29,9 +34,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginLeft: 20,
     marginRight: 80,
-    borderWidth: 2,
     borderRadius: 15,
-    borderColor: "grey",
+    backgroundColor: '#d3d3d3',
     padding: 10,
     overflow: 'hidden'
   },
@@ -44,9 +48,7 @@ const styles = StyleSheet.create({
     marginLeft: 80,
     marginRight: 20,
     borderRadius: 15,
-    borderWidth: 2,
-    backgroundColor: 'black',
-    borderColor: "rgb(126, 217, 87)",
+    backgroundColor: 'rgb(0, 120, 254)',
     padding: 10,
     overflow: 'hidden'
   }
