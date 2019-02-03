@@ -11,7 +11,11 @@ const TabNavigator = createBottomTabNavigator({
   Profile: Home,
   SignUp: SignUp,
   Schedule: Schedule,
+<<<<<<< HEAD
+  ScheduleItem: ScheduleItem
+=======
   ScheduleItem : ScheduleItem
+>>>>>>> 59ef24a3f1ea06565a8c595477dfdda6a71fddf5
 }, {tabBarOptions: {
   activeTintColor: '#7ed957',
   labelStyle: {
