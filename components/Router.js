@@ -11,7 +11,8 @@ const TabNavigator = createBottomTabNavigator({
   Chat: Chatdisplay,
   Profile: Home,
   SignUp: SignUp,
-  Schedule: Schedule
+  Schedule: Schedule,
+  ScheduleItem: ScheduleItem
 }, {tabBarOptions: {
   activeTintColor: '#7ed957',
   labelStyle: {

@@ -34,22 +34,11 @@ state ={
 
 
   render() {
-
-
     return (
-<ScrollView>
-        <Text style={{fontSize:35, marginTop: 35}}>{this.state.awayTeamNames}</Text>
-        <Text style={{fontSize:35, marginTop: 5}}> At</Text>
-        <Text style={{fontSize:35, marginTop: 5}}>{this.state.homeTeamNames}</Text>
-</ScrollView>
+      <View>
+        <Text style={{color: 'green'}}>PENISPENISPENISPENSI</Text>
+      </View>
+
     )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-})
