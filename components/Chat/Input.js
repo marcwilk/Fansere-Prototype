@@ -1,5 +1,6 @@
 import React from 'react'
-import {View, TextInput, StyleSheet} from 'react-native'
+import {View, Text, TextInput, StyleSheet} from 'react-native'
+
 
 export default class Input extends React.Component {
   constructor(props) {
@@ -26,15 +27,13 @@ export default class Input extends React.Component {
 const styles = StyleSheet.create({
   container: {
     height: 40,
-    borderColor: "rgb(126, 217, 87)",
-    borderWidth: 3,
+    borderColor: 'black',
+    borderWidth: 2,
     borderRadius: 4,
-    marginLeft: 8,
-    marginRight: 8,
+    marginLeft: 5,
+    marginRight: 5,
     backgroundColor: 'white',
-    color: 'black',
-    overflow: 'hidden',
-    marginBottom: 20,
-    marginTop: 10
+    color: '#007AFF',
+    overflow: 'hidden'
   }
 })
