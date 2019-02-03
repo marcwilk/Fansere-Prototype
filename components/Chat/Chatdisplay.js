@@ -8,7 +8,7 @@ export default class Chatdisplay extends React.Component {
     super(props)
     this.state = {
       messages: {
-        Ben: [{
+        Bill: [{
           user: "Ben",
           message: "suh"
         },
