@@ -14,7 +14,6 @@ export default class Chat extends React.Component {
   }
 
   render() {
-    console.log("Eat cock")
     return (
       <View>
         <Header
