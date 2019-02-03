@@ -1,9 +1,8 @@
+//blah blah
+// more blah
 import React, {Component} from 'react'
 import {Platform, StyleSheet, Text, View} from 'react-native'
-import Chat from './components/Chat'
-import Map from './components/mapComponents/Map'
-
-
+import { Nav } from './components/Router'
 
 
 type Props = {};
@@ -11,8 +10,7 @@ export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Map />
-        <Chat />
+        <Nav />
       </View>
     );
   }
@@ -21,8 +19,6 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
-  },
+  }
 });
