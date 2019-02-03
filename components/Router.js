@@ -11,7 +11,15 @@ const TabNavigator = createBottomTabNavigator({
   Profile: Home,
   SignUp: SignUp,
   Schedule: Schedule
-})
+}, {tabBarOptions: {
+  activeTintColor: '#7ed957',
+  labelStyle: {
+    fontSize: 14,
+  },
+  style: {
+    backgroundColor: '#545454',
+  },
+}})
 
 
 export const Nav = createAppContainer(TabNavigator)

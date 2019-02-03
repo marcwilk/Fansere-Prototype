@@ -1,10 +1,7 @@
 import React from 'react'
-import {StyleSheet, Text, View, ScrollView, KeyboardAvoidingView} from 'react-native';
-import Message from './Message'
-import Input from './Input'
-import Messanger from './Messanger'
-import { Button, Header, ListItem } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import {StyleSheet, Text, View, ScrollView} from 'react-native';
+import { Header, ListItem } from 'react-native-elements';
+
 
 export default class Chatlist extends React.Component {
   constructor(props) {
@@ -15,17 +12,18 @@ export default class Chatlist extends React.Component {
   }
 
   renderChatList(obj) {
-    return Object.keys(obj).map((key, i) => <ListItem key={i} title={key} onPress={e => this.props.press(key)} style={styles.list} chevron chevronColor="black"/>)
+    return Object.keys(obj).map((key, i) => <ListItem key={i} title={key} onPress={e => this.props.press(key)} style={styles.list} containerStyle={{backgroundColor: 'black'}} titleStyle={{ color: 'white', fontWeight: 'bold' }} chevron chevronColor="black"/>)
   }
 
   render() {
     return (
-      <View>
+      <ScrollView>
         <Header
-          centerComponent={{ text: 'Chats', style: { color: '#fff', fontSize: 22 } }}
+          backgroundColor="rgb(126, 217, 75)"
+          centerComponent={{ text: 'Chats', style: { color: '#fff', fontSize: 22, fontWeight: 'bold' } }}
         />
         {this.renderChatList(this.props.messages)}
-      </View>
+      </ScrollView>
     )
   }
 }
@@ -33,6 +31,6 @@ export default class Chatlist extends React.Component {
 const styles = StyleSheet.create({
   list: {
     borderWidth: .5,
-    borderColor: 'grey'
+    borderColor: "rgb(126, 217, 87)",
   }
 })

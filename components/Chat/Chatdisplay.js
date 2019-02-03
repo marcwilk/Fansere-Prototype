@@ -1,8 +1,7 @@
 import React from 'react'
-import {StyleSheet, Text, View, ScrollView, KeyboardAvoidingView} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Chat from './Chat'
 import Chatlist from './Chatlist'
-import { ListItem, Header } from 'react-native-elements'
 
 export default class Chatdisplay extends React.Component {
   constructor(props) {
@@ -10,70 +9,82 @@ export default class Chatdisplay extends React.Component {
     this.state = {
       messages: {
         Ben: [{
-          user: "a",
+          user: "Ben",
           message: "suh"
         },
         {
-          user: "b",
+          user: "Sean",
           message: "new phone who dis"
         },
         {
-          user: "a",
+          user: "Ben",
           message: "nm then"
         },
         {
-          user: "b",
+          user: "Sean",
           message: "kewl"
         }],
         Will: [{
-          user: "a",
+          user: "Will",
           message: "hi"
         },
         {
-          user: "b",
+          user: "Sean",
           message: "hi"
         },
         {
-          user: "a",
+          user: "Will",
           message: "bucket, now."
         },
         {
-          user: "b",
+          user: "Sean",
           message: "yes sir"
         }],
         Owen: [{
-          user: "a",
+          user: "Owen",
           message: "suh"
         },
         {
-          user: "b",
+          user: "Sean",
           message: "suhhhh"
         },
         {
-          user: "a",
+          user: "Owen",
           message: "d00d"
         },
         {
-          user: "b",
+          user: "Sean",
           message: "d0000d"
         }],
         Marc: [{
-          user: "a",
+          user: "Marc",
           message: "yo"
         },
         {
-          user: "b",
+          user: "Sean",
           message: "ayyye you get that android shit workin?"
         },
         {
-          user: "a",
+          user: "Marc",
           message: "idk maybe"
         },
         {
-          user: "b",
+          user: "Sean",
           message: "..."
         }],
-      },
+        "Tom Brady": [],
+        "Aaron Rodgers": [],
+        "Patrick Mahomes": [],
+        "Kirk Cousins": [],
+        "Jared Goff": [],
+        "Andrew Luck": [],
+        "Drew Brees": [],
+        "Marcus Mariota": [],
+        "DeShaun Watson": [],
+        "Russel Wilson": [],
+        "Jamis Winston": [],
+        "Mitchell Trubitsky": []
+        },
       showChat: false,
       chatToShow: ''
     }
@@ -81,7 +92,6 @@ export default class Chatdisplay extends React.Component {
     this.addMessage = this.addMessage.bind(this)
     this.returnToChatList = this.returnToChatList.bind(this)
     this.onPressListItem = this.onPressListItem.bind(this)
-
   }
 
   renderChat(chatArr, index) {
@@ -96,10 +106,9 @@ export default class Chatdisplay extends React.Component {
     this.setState({showChat: false})
   }
 
-
   addMessage(input) {
     let obj = {
-      user: "b",
+      user: "Sean",
       message: input
     }
     let messages = {...this.state.messages}
@@ -110,7 +119,7 @@ export default class Chatdisplay extends React.Component {
 
   render() {
     return (
-      <View>
+      <View >
         {this.state.showChat ? <Chat chat={this.state.messages[this.state.chatToShow]} name={this.state.chatToShow} add={this.addMessage} close={this.returnToChatList}/> : <Chatlist render={this.renderChatList} messages={this.state.messages} press={this.onPressListItem}/> }
       </View>
     )
@@ -118,8 +127,5 @@ export default class Chatdisplay extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  list: {
-    borderWidth: .5,
-    borderColor: 'grey'
-  }
+
 })
