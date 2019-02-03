@@ -1,5 +1,6 @@
 import React from 'react'
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation'
+import Chat from './Chat/Chat'
 import Chatdisplay from './Chat/Chatdisplay'
 import SignUp from './SignUp/SignUp'
 import Home from './Profile/Home'
@@ -11,7 +12,7 @@ const TabNavigator = createBottomTabNavigator({
   Profile: Home,
   SignUp: SignUp,
   Schedule: Schedule,
-  ScheduleItem : ScheduleItem
+  ScheduleItem: ScheduleItem
 }, {tabBarOptions: {
   activeTintColor: '#7ed957',
   labelStyle: {
