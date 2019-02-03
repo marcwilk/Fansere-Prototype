@@ -1,7 +1,7 @@
 //blah blah
 // more blah
 import React, {Component} from 'react'
-import {Platform, StyleSheet, Text, View} from 'react-native'
+import {Platform, StyleSheet, Text, View } from 'react-native'
 import { Nav } from './components/Router'
 
 
@@ -19,6 +19,6 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F5FCFF',
+    backgroundColor: 'black',
   }
 });
