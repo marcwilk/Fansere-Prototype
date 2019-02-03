@@ -118,6 +118,7 @@ export default class Chatdisplay extends React.Component {
   }
 
   render() {
+
     return (
       <View >
         {this.state.showChat ? <Chat chat={this.state.messages[this.state.chatToShow]} name={this.state.chatToShow} add={this.addMessage} close={this.returnToChatList}/> : <Chatlist render={this.renderChatList} messages={this.state.messages} press={this.onPressListItem}/> }
