@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image, ScrollView, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, Text, TextInput, View, Image, ScrollView, KeyboardAvoidingView } from 'react-native';
 import { Avatar, ButtonGroup, Header, Card, ListItem, Button, Icon } from 'react-native-elements';
 
 export default class Home extends React.Component {
@@ -7,7 +7,8 @@ export default class Home extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      selectedIndex: 2
+      selectedIndex: 2,
+      text: "Placeholder text"
     }
     this.updateIndex = this.updateIndex.bind(this)
   }
@@ -59,15 +60,18 @@ export default class Home extends React.Component {
 
         <Card
           containerStyle={{height: 325}}
-          title='Current Roster'>
-          <Text style={{marginBottom: 10}}>
-            Here will be a ListItem with your roster.
-          </Text>
-          <Button
-            icon={<Icon name='code' color='#ffffff' />}
-            backgroundColor='#03A9F4'
-            buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0, backgroundColor: 'rgb(126, 217, 75)'}}
-            title='CHECK IT' />
+          title='Edit Profile Details'>
+          <TextInput
+            style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+            onChangeText={(text) => this.setState({text})}
+            value={this.state.text}
+          />
+          <br/>
+          <TextInput
+            style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+            onChangeText={(text) => this.setState({text})}
+            value={this.state.text}
+          />
         </Card>
 
       </View>
