@@ -7,7 +7,6 @@
     "test": "jest"
   },
   "dependencies": {
-<<<<<<< HEAD
     "adm-zip": "^0.4.13",
     "plist": "^3.0.1",
     "react": "16.6.3",
@@ -15,16 +14,10 @@
     "react-native-fbsdk": "^0.8.0",
     "react-native-gesture-handler": "^1.0.15",
     "react-navigation": "^3.0.9",
-    "xcode": "^2.0.0"
-=======
+    "xcode": "^2.0.0",
     "axios": "^0.18.0",
-    "react": "16.6.3",
-    "react-native": "0.58.3",
     "react-native-elements": "^1.0.0",
-    "react-native-gesture-handler": "^1.0.15",
-    "react-native-vector-icons": "^6.2.0",
-    "react-navigation": "^3.0.9"
->>>>>>> d3a6f623a8b9d783de94e01df69e91263f5515d0
+    "react-native-vector-icons": "^6.2.0"
   },
   "devDependencies": {
     "babel-core": "^7.0.0-bridge.0",
