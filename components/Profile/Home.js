@@ -1,10 +1,9 @@
 import React from 'react'
-import {StyleSheet, Text, View, ScrollView, KeyboardAvoidingView} from 'react-native';
-import { Avatar } from 'react-native-elements';
-import { ButtonGroup } from 'react-native-elements';
-import { Header } from 'react-native-elements';
+import { StyleSheet, Text, View, Image, ScrollView, KeyboardAvoidingView } from 'react-native';
+import { Avatar, ButtonGroup, Header, Card, ListItem, Button, Icon } from 'react-native-elements';
 
 export default class Home extends React.Component {
+
   constructor(props) {
     super(props)
     this.state = {
@@ -20,6 +19,13 @@ export default class Home extends React.Component {
 
     const buttons = ['Edit Profile', 'Find Friends', 'Rosters']
     const { selectedIndex } = this.state
+
+    const users = [
+     {
+        name: 'brynn',
+        avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
+     }
+    ]
 
     return (
 
@@ -50,7 +56,22 @@ export default class Home extends React.Component {
           buttons={buttons}
           containerStyle={{height: 30, backgroundColor: '#a6a6a6'}}
         />
-        
+
+        <i class="fas fa-user"></i>
+
+        <Card
+          containerStyle={{height: 325}}
+          title='Current Roster'>
+          <Text style={{marginBottom: 10}}>
+            Here will be a ListItem with your roster.
+          </Text>
+          <Button
+            icon={<Icon name='code' color='#ffffff' />}
+            backgroundColor='#03A9F4'
+            buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0, backgroundColor: 'rgb(126, 217, 75)'}}
+            title='CHECK IT' />
+        </Card>
+
       </View>
     )
   }
