@@ -32,7 +32,7 @@ export default class Home extends React.Component {
       <View style={styles.container}>
 
         <Header
-        backgroundColor="rgb(126, 217, 75)"
+        backgroundColor="#7ed957"
         placement="center"
         centerComponent={{ text: 'Profile', style: { color: 'white', fontSize: 22, fontWeight: 'bold' }}}
         />
@@ -54,10 +54,8 @@ export default class Home extends React.Component {
           selectedIndex={selectedIndex}
           selectedButtonStyle={{backgroundColor: 'rgb(126, 217, 75)'}}
           buttons={buttons}
-          containerStyle={{height: 30, backgroundColor: '#a6a6a6'}}
+          containerStyle={{height: 30}}
         />
-
-        <i class="fas fa-user"></i>
 
         <Card
           containerStyle={{height: 325}}

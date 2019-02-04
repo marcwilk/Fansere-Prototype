@@ -14,13 +14,15 @@ const TabNavigator = createBottomTabNavigator({
   Schedule: Schedule,
   ScheduleItem: ScheduleItem
 }, {tabBarOptions: {
-  activeTintColor: '#7ed957',
+  activeTintColor: 'white',
+  inactiveTintColor: 'black',
   labelStyle: {
-    fontSize: 14,
+    fontSize: 14
   },
   style: {
-    backgroundColor: '#545454',
-  },
+    backgroundColor: '#7ed957',
+    color: '#7ed957'
+  }
 }})
 
 
