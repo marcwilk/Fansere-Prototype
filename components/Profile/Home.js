@@ -50,7 +50,7 @@ export default class Home extends React.Component {
           buttons={buttons}
           containerStyle={{height: 30, backgroundColor: '#a6a6a6'}}
         />
-
+        
       </View>
     )
   }
