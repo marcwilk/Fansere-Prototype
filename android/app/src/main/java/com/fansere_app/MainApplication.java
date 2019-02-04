@@ -3,7 +3,13 @@ package com.fansere_app;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+<<<<<<< HEAD
 import com.oblador.vectoricons.VectorIconsPackage;
+=======
+import com.rnfs.RNFSPackage;
+import fr.bamlab.rnimageresizer.ImageResizerPackage;
+import com.imagepicker.ImagePickerPackage;
+>>>>>>> 8fcf24f31a5bf149b339c47fc16e3cdb27f37426
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
@@ -25,7 +31,13 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+<<<<<<< HEAD
             new VectorIconsPackage(),
+=======
+            new RNFSPackage(),
+            new ImageResizerPackage(),
+            new ImagePickerPackage(),
+>>>>>>> 8fcf24f31a5bf149b339c47fc16e3cdb27f37426
             new RNGestureHandlerPackage()
       );
     }

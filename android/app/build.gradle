@@ -134,7 +134,13 @@ android {
 }
 
 dependencies {
+<<<<<<< HEAD
     implementation project(':react-native-vector-icons')
+=======
+    implementation project(':react-native-fs')
+    implementation project(':react-native-image-resizer')
+    implementation project(':react-native-image-picker')
+>>>>>>> 8fcf24f31a5bf149b339c47fc16e3cdb27f37426
     implementation project(':react-native-gesture-handler')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
