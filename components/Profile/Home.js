@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Component} from 'react';
 import {StyleSheet, Text, View, ScrollView, KeyboardAvoidingView} from 'react-native';
 import { Avatar } from 'react-native-elements';
 import { ButtonGroup } from 'react-native-elements';
@@ -49,7 +49,7 @@ export default class Home extends React.Component {
         />
 
       </View>
-    )
+    );
   }
 }
 
