@@ -22,11 +22,13 @@ export default class Home extends React.Component {
     const { selectedIndex } = this.state
 
     return (
+
       <View style={styles.container}>
 
         <Header
+        backgroundColor="rgb(126, 217, 75)"
         placement="center"
-        centerComponent={{ text: 'Profile', style: { color: 'white', fontSize: 22 }}}
+        centerComponent={{ text: 'Profile', style: { color: 'white', fontSize: 22, fontWeight: 'bold' }}}
         />
 
         <Text style={styles.profileText} h1>Profile Username</Text>
@@ -44,8 +46,9 @@ export default class Home extends React.Component {
         <ButtonGroup
           onPress={this.updateIndex}
           selectedIndex={selectedIndex}
+          selectedButtonStyle={{backgroundColor: 'rgb(126, 217, 75)'}}
           buttons={buttons}
-          containerStyle={{height: 30}}
+          containerStyle={{height: 30, backgroundColor: '#a6a6a6'}}
         />
 
       </View>
@@ -57,12 +60,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
+    color: '#545454',
   },
   profileText: {
     fontWeight: 'bold',
-    color: 'black',
+    color: 'white',
   },
   taglineText: {
-    color: 'black',
+    color: 'white',
   }
 })
