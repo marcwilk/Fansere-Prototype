@@ -1,17 +1,18 @@
 import React from 'react'
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, Switch, Image, ScrollView, KeyboardAvoidingView } from 'react-native';
-import { Avatar, ButtonGroup, Header, Card, ListItem, Button, Icon } from 'react-native-elements';
+import { StyleSheet, Text, TextInput, Button, TouchableOpacity, View, Switch, Image, ScrollView, KeyboardAvoidingView } from 'react-native';
+import { Avatar, ButtonGroup, Header, Card, ListItem, Icon } from 'react-native-elements';
 
 export default class Home extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      selectedIndex: 2,
+      selectedIndex: 0,
       newUsername: '',
       newTagline: '',
       username: 'Marc_Wilk',
       tagline: 'Jordan > LeBron',
+      status: true,
     }
     this.updateIndex = this.updateIndex.bind(this)
   }
@@ -30,6 +31,13 @@ export default class Home extends React.Component {
   submitTagline = (tagline) => {
     this.setState({ tagline: this.state.newTagline })
   }
+  showHideTextComponent = () => {
+    if(this.state.status == true) {
+      this.setState({status: false})
+    } else {
+      this.setState({status: true})
+    }
+  }
 
   render() {
 
@@ -39,6 +47,13 @@ export default class Home extends React.Component {
     return (
 
       <View style={styles.container}>
+
+      {
+        this.state.status ? <Text style= {{ fontSize: 25, color: 'white', textAlign: 'center'}}> Hello </Text> : null
+      }
+
+      <Button title="Hide/Show Text Component" onPress={this.showHideTextComponent}
+      />
 
         <Header
         backgroundColor="#7ed957"
