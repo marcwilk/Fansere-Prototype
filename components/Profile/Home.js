@@ -1,10 +1,11 @@
 import React from 'react'
-import { StyleSheet, Text, TextInput, Button, TouchableOpacity, View, Switch, Image, ScrollView, KeyboardAvoidingView } from 'react-native';
-import { Avatar, ButtonGroup, Header, Card, ListItem, Icon } from 'react-native-elements';
+import { StyleSheet, Text, Button, View } from 'react-native'
+import { Avatar, ButtonGroup, Header } from 'react-native-elements'
 import EditProfile from './EditProfile'
+import Friends from './Friends'
+import Teams from './Teams'
 
 export default class Home extends React.Component {
-
   constructor(props) {
     super(props)
     this.state = {
@@ -20,7 +21,7 @@ export default class Home extends React.Component {
     this.setState({selectedIndex})
   }
   updateUsername = (text) => {
-    console.log("text", text)
+    console.log('text', text)
     this.setState({ newUsername: text })
   }
   updateTagline = (text) => {
@@ -45,35 +46,44 @@ export default class Home extends React.Component {
         />
       )
     }
+    if(this.state.selectedIndex === 1) {
+      return (
+        <Friends
+        />
+      )
+    }
+    if(this.state.selectedIndex === 2) {
+      return (
+        <Teams
+        />
+      )
+    }
   }
 
   render() {
-
     const buttons = ['Edit Profile', 'Friends', 'Teams']
     const { selectedIndex } = this.state
-
     return (
-
       <View style={styles.container}>
-
         <Header
-        backgroundColor="#7ed957"
-        placement="center"
-        centerComponent={{ text: 'Profile', style: { color: 'white', fontSize: 22, fontWeight: 'bold' }}}
+          backgroundColor='#7ed957'
+          placement='center'
+          centerComponent={{ text: 'Profile', style: { color: 'white', fontSize: 22, fontWeight: 'bold' }}}
         />
-
-        <Text style={styles.profileText} h1>{this.state.username}</Text>
-
-        <Avatar size="large" onPress={() => console.log("Works!")}
+        <Text
+          style={styles.profileText} h1>{this.state.username}
+        </Text>
+        <Avatar size='large' onPress={() => console.log('it works!')}
           source={{
             uri:
               'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
           }}
           showEditButton
         />
-
-        <Text style={styles.taglineText} h2>{this.state.tagline}</Text>
-
+        <Text
+          style={styles.taglineText} h2>
+          {this.state.tagline}
+        </Text>
         <ButtonGroup
           onPress={this.updateIndex}
           selectedIndex={selectedIndex}
@@ -81,9 +91,7 @@ export default class Home extends React.Component {
           buttons={buttons}
           containerStyle={{height: 30}}
         />
-
         {this.toggleView()}
-
       </View>
     )
   }

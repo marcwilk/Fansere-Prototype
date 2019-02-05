@@ -1,6 +1,6 @@
 import React from 'react'
-import { StyleSheet, Text, TextInput, Button, TouchableOpacity, View, Switch, Image, ScrollView, KeyboardAvoidingView } from 'react-native';
-import { Avatar, ButtonGroup, Header, Card, ListItem, Icon } from 'react-native-elements';
+import { StyleSheet, Text, TextInput, Button, TouchableOpacity } from 'react-native'
+import { Card } from 'react-native-elements'
 
 export default class EditProfile extends React.Component {
   render() {
@@ -12,10 +12,10 @@ export default class EditProfile extends React.Component {
           Username:
         </Text>
         <TextInput
-          underlineColorAndroid = "transparent"
+          underlineColorAndroid = 'transparent'
           placeholder = {this.props.username}
-          placeholderTextColor = "black"
-          autoCapitalize = "none"
+          placeholderTextColor = 'black'
+          autoCapitalize = 'none'
           style={{height: 40, borderColor: 'gray', borderWidth: 1, padding: 10, margin: 10}}
           onChangeText={this.props.updateUsername}
         />
@@ -30,10 +30,10 @@ export default class EditProfile extends React.Component {
           Tagline:
         </Text>
         <TextInput
-          underlineColorAndroid = "transparent"
+          underlineColorAndroid = 'transparent'
           placeholder = {this.props.tagline}
-          placeholderTextColor = "black"
-          autoCapitalize = "none"
+          placeholderTextColor = 'black'
+          autoCapitalize = 'none'
           style={{height: 40, borderColor: 'gray', borderWidth: 1, padding: 10, margin: 10}}
           onChangeText={this.props.updateTagline}
         />
