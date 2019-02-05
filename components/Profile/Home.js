@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, Image, ScrollView, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, Switch, Image, ScrollView, KeyboardAvoidingView } from 'react-native';
 import { Avatar, ButtonGroup, Header, Card, ListItem, Button, Icon } from 'react-native-elements';
 
 export default class Home extends React.Component {
@@ -8,8 +8,10 @@ export default class Home extends React.Component {
     super(props)
     this.state = {
       selectedIndex: 2,
+      newUsername: '',
+      newTagline: '',
       username: 'Marc_Wilk',
-      tagline: 'Jordan > LeBron'
+      tagline: 'Jordan > LeBron',
     }
     this.updateIndex = this.updateIndex.bind(this)
   }
@@ -17,18 +19,20 @@ export default class Home extends React.Component {
     this.setState({selectedIndex})
   }
   updateUsername = (text) => {
-    this.setState({ username: text })
+    this.setState({ newUsername: text })
   }
   updateTagline = (text) => {
-    this.setState({ tagline: text })
+    this.setState({ newTagline: text })
   }
-  submit = (username, tagline) => {
-    ('username' + username + 'tagline' + tagline)
+  submitUsername = (username) => {
+    this.setState({ username: this.state.newUsername })
+  }
+  submitTagline = (tagline) => {
+    this.setState({ tagline: this.state.newTagline })
   }
 
   render() {
 
-    console.log("tagline", this.state.tagline)
     const buttons = ['Edit Profile', 'Friends', 'Teams']
     const { selectedIndex } = this.state
 
@@ -70,17 +74,16 @@ export default class Home extends React.Component {
           </Text>
           <TextInput
             underlineColorAndroid = "transparent"
-            placeholder = "Username"
+            placeholder = {this.state.username}
             placeholderTextColor = "black"
             autoCapitalize = "none"
             style={{height: 40, borderColor: 'gray', borderWidth: 1, padding: 10, margin: 10}}
             onChangeText={this.updateUsername}
-            value={this.state.username}
           />
           <TouchableOpacity
             style = {styles.submitButton}
             onPress = {
-              () => this.submit(this.state.username)
+              () => this.submitUsername(this.state.username)
             }>
              <Text style = {styles.submitButtonText}> Submit </Text>
           </TouchableOpacity>
@@ -89,17 +92,16 @@ export default class Home extends React.Component {
           </Text>
           <TextInput
             underlineColorAndroid = "transparent"
-            placeholder = "Tagline"
+            placeholder = {this.state.tagline}
             placeholderTextColor = "black"
             autoCapitalize = "none"
             style={{height: 40, borderColor: 'gray', borderWidth: 1, padding: 10, margin: 10}}
             onChangeText={this.updateTagline}
-            value={this.state.tagline}
           />
           <TouchableOpacity
             style = {styles.submitButton}
             onPress = {
-              () => this.submit(this.state.tagline)
+              () => this.submitTagline(this.state.tagline)
             }>
              <Text style = {styles.submitButtonText}> Submit </Text>
           </TouchableOpacity>
