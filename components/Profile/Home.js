@@ -9,7 +9,7 @@ export default class Home extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      selectedIndex: 0,
+      selectedIndex: 2,
       newUsername: '',
       newTagline: '',
       username: 'Marc_Wilk',
