@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, TextInput, Button, TouchableOpacity, View, Switch, Image, ScrollView, KeyboardAvoidingView } from 'react-native';
 import { Avatar, ButtonGroup, Header, Card, ListItem, Icon } from 'react-native-elements';
+import EditProfile from './EditProfile'
 
 export default class Home extends React.Component {
 
@@ -11,8 +12,7 @@ export default class Home extends React.Component {
       newUsername: '',
       newTagline: '',
       username: 'Marc_Wilk',
-      tagline: 'Jordan > LeBron',
-      status: true,
+      tagline: 'Jordan > LeBron'
     }
     this.updateIndex = this.updateIndex.bind(this)
   }
@@ -20,6 +20,7 @@ export default class Home extends React.Component {
     this.setState({selectedIndex})
   }
   updateUsername = (text) => {
+    console.log("text", text)
     this.setState({ newUsername: text })
   }
   updateTagline = (text) => {
@@ -31,11 +32,18 @@ export default class Home extends React.Component {
   submitTagline = (tagline) => {
     this.setState({ tagline: this.state.newTagline })
   }
-  showHideTextComponent = () => {
-    if(this.state.status == true) {
-      this.setState({status: false})
-    } else {
-      this.setState({status: true})
+  toggleView = () => {
+    if(this.state.selectedIndex === 0) {
+      return (
+        <EditProfile
+          username = {this.state.username}
+          tagline = {this.state.tagline}
+          updateUsername = {this.updateUsername}
+          updateTagline = {this.updateTagline}
+          submitUsername = {this.submitUsername}
+          submitTagline = {this.submitTagline}
+        />
+      )
     }
   }
 
@@ -47,13 +55,6 @@ export default class Home extends React.Component {
     return (
 
       <View style={styles.container}>
-
-      {
-        this.state.status ? <Text style= {{ fontSize: 25, color: 'white', textAlign: 'center'}}> Hello </Text> : null
-      }
-
-      <Button title="Hide/Show Text Component" onPress={this.showHideTextComponent}
-      />
 
         <Header
         backgroundColor="#7ed957"
@@ -81,46 +82,7 @@ export default class Home extends React.Component {
           containerStyle={{height: 30}}
         />
 
-        <Card
-          containerStyle={{height: 350, width: 300, padding: 10}}
-          title='Edit Profile Details'>
-          <Text style={{color: 'black'}}>
-            Username:
-          </Text>
-          <TextInput
-            underlineColorAndroid = "transparent"
-            placeholder = {this.state.username}
-            placeholderTextColor = "black"
-            autoCapitalize = "none"
-            style={{height: 40, borderColor: 'gray', borderWidth: 1, padding: 10, margin: 10}}
-            onChangeText={this.updateUsername}
-          />
-          <TouchableOpacity
-            style = {styles.submitButton}
-            onPress = {
-              () => this.submitUsername(this.state.username)
-            }>
-             <Text style = {styles.submitButtonText}> Submit </Text>
-          </TouchableOpacity>
-          <Text style={{color: 'black'}}>
-            Tagline:
-          </Text>
-          <TextInput
-            underlineColorAndroid = "transparent"
-            placeholder = {this.state.tagline}
-            placeholderTextColor = "black"
-            autoCapitalize = "none"
-            style={{height: 40, borderColor: 'gray', borderWidth: 1, padding: 10, margin: 10}}
-            onChangeText={this.updateTagline}
-          />
-          <TouchableOpacity
-            style = {styles.submitButton}
-            onPress = {
-              () => this.submitTagline(this.state.tagline)
-            }>
-             <Text style = {styles.submitButtonText}> Submit </Text>
-          </TouchableOpacity>
-        </Card>
+        {this.toggleView()}
 
       </View>
     )
@@ -139,15 +101,5 @@ const styles = StyleSheet.create({
   },
   taglineText: {
     color: 'white',
-  },
-  submitButton: {
-   backgroundColor: 'rgb(126, 217, 75)',
-   padding: 10,
-   height: 40,
-   margin: 10
-  },
-  submitButtonText:{
-    backgroundColor: 'rgb(126, 217, 75)',
-    color: 'white'
   }
 })
