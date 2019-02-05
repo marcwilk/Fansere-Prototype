@@ -8,7 +8,7 @@ export default class Chatdisplay extends React.Component {
     super(props)
     this.state = {
       messages: {
-        Bill: [{
+        Ben: [{
           user: "Ben",
           message: "suh"
         },
@@ -118,7 +118,7 @@ export default class Chatdisplay extends React.Component {
   }
 
   render() {
-    console.log(this.state.messages)
+    
     return (
       <View >
         {this.state.showChat ? <Chat chat={this.state.messages[this.state.chatToShow]} name={this.state.chatToShow} add={this.addMessage} close={this.returnToChatList}/> : <Chatlist render={this.renderChatList} messages={this.state.messages} press={this.onPressListItem}/> }

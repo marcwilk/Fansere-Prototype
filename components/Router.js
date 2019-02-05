@@ -6,13 +6,14 @@ import SignUp from './SignUp/SignUp'
 import Home from './Profile/Home'
 import Schedule from './Schedule/Schedule'
 import ScheduleItem from './Schedule/ScheduleItem'
+import BarMap from './Schedule/BarMap/BarMap'
 
 const TabNavigator = createBottomTabNavigator({
   Chat: Chatdisplay,
   Profile: Home,
   SignUp: SignUp,
   Schedule: Schedule,
-  ScheduleItem: ScheduleItem
+  BarMap: BarMap,
 }, {tabBarOptions: {
   activeTintColor: '#7ed957',
   labelStyle: {
