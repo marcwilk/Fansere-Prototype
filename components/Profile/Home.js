@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { StyleSheet, Text, TextInput, View, Image, ScrollView, KeyboardAvoidingView } from 'react-native';
 import { Avatar, ButtonGroup, Header, Card, ListItem, Button, Icon } from 'react-native-elements';
 
@@ -33,6 +34,8 @@ export default class Home extends React.Component {
       <View style={styles.container}>
 
         <Header
+        placement="center"
+        centerComponent={{ text: 'Profile', style: { color: 'white', fontSize: 22 }}}
         backgroundColor="#7ed957"
         placement="center"
         centerComponent={{ text: 'Profile', style: { color: 'white', fontSize: 22, fontWeight: 'bold' }}}
@@ -57,6 +60,7 @@ export default class Home extends React.Component {
           buttons={buttons}
           containerStyle={{height: 30}}
         />
+
 
         <Card
           containerStyle={{height: 325}}

@@ -6,7 +6,6 @@ import SignUp from './SignUp/SignUp'
 import Home from './Profile/Home'
 import Schedule from './Schedule/Schedule'
 import ScheduleItem from './Schedule/ScheduleItem'
-
 const TabNavigator = createBottomTabNavigator({
   Chat: Chatdisplay,
   Profile: Home,
@@ -24,6 +23,5 @@ const TabNavigator = createBottomTabNavigator({
     color: '#7ed957'
   }
 }})
-
 
 export const Nav = createAppContainer(TabNavigator)
