@@ -75,6 +75,9 @@ export default class EditProfile extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    paddingBottom: 10
+  },
   profileText: {
     fontWeight: 'bold',
     color: 'white'
