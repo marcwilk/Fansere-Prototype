@@ -7,6 +7,20 @@ import Teams from './Teams'
 
 export default class Home extends React.Component {
 
+  // async componentDidMount() {
+  //   const response = await fetch('http://localhost:3007/users', {
+  //     method: 'POST',
+  //     body: JSON.stringify({username: this.state.username}),
+  //     headers: {
+  //         'Content-Type': 'application/json',
+  //         'Accept': 'application/json',
+  //       }
+  //   })
+  //   const json = await response.json()
+  //   const username = this.convertToObject(json)
+  //   this.setState({username: username})
+  // }
+
   constructor(props) {
     super(props)
     this.state = {
@@ -115,7 +129,8 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
-    color: '#545454'
+    color: '#545454',
+    paddingBottom: 10
   },
   profileText: {
     fontWeight: 'bold',
