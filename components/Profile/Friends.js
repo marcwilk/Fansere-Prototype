@@ -8,12 +8,12 @@ export default class Friends extends React.Component {
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
     this.state = {
       dataSource: ds.cloneWithRows([
-         {image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username:'johndoe1'},
-         {image: 'https://bootdey.com/img/Content/avatar/avatar2.png', username:'johndoe2'},
-         {image: 'https://bootdey.com/img/Content/avatar/avatar3.png', username:'johndoe3'},
-         {image: 'https://bootdey.com/img/Content/avatar/avatar4.png', username:'johndoe4'},
-         {image: 'https://bootdey.com/img/Content/avatar/avatar1.png', username:'johndoe5'},
-         {image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username:'johndoe6'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username:'Johndoe1'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar2.png', username:'Johndoe2'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar3.png', username:'Johndoe3'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar4.png', username:'Johndoe4'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar1.png', username:'Johndoe5'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username:'Johndoe6'},
       ]),
     }
   }
@@ -22,6 +22,26 @@ export default class Friends extends React.Component {
     return (
       <ScrollView>
         <View style={styles.container}>
+            <View style={styles.header}>
+              <View style={styles.headerContent}>
+                  <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar1.png'}}/>
+                  <Text style={styles.name}>Add Friends</Text>
+              </View>
+            </View>
+            <View style={styles.body}>
+              <ListView style={styles.container} enableEmptySections={true}
+                dataSource={this.state.dataSource}
+                renderRow={(user) => {
+                  return (
+                    <TouchableOpacity>
+                      <View style={styles.box}>
+                      <Image style={styles.image} source={{uri: user.image}}/>
+                        <Text style={styles.username}>Click to add user</Text>
+                      </View>
+                    </TouchableOpacity>
+                  )
+              }}/>
+            </View>
             <View style={styles.header}>
               <View style={styles.headerContent}>
                   <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar1.png'}}/>
