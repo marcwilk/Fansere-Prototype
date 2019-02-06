@@ -10,7 +10,7 @@ export default class Chatdisplay extends React.Component {
       messages: [],
       showChat: false,
       chatToShow: '',
-      userName: "Sean Tansey",
+      userName: "Marc Wilk",
     }
     //this.addMessage = this.addMessage.bind(this)
     this.returnToChatList = this.returnToChatList.bind(this)

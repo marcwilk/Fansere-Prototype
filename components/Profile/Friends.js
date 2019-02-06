@@ -15,7 +15,26 @@ export default class Friends extends React.Component {
          {image: 'https://bootdey.com/img/Content/avatar/avatar1.png', username:'Johndoe5'},
          {image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username:'Johndoe6'},
       ]),
+      addFriendsList: ds.cloneWithRows([
+         {image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username:'Patrick Mahomes'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar2.png', username:'Tom Brady'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar3.png', username:'Aaron Rodgers'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar4.png', username:'Louie C.K.'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar1.png', username:'Kirk Cousins'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username:'Bill Cosby'},
+      ])
     }
+  }
+
+  onPressNewFriend(input, arr1, arr2) {
+    this.props.add(input)
+    // let filtered = arr2.filter(obj => obj.username !== input)
+    // let objToMove = arr2.find(obj => obj.username === input)
+    // let newArr1 = [...arr1, objToMove]
+    // console.log(filtered)
+    //this.setState({dataSource: ds.cloneWithRows([...this.state.da])})
+
+
   }
 
   render() {
@@ -30,13 +49,14 @@ export default class Friends extends React.Component {
             </View>
             <View style={styles.body}>
               <ListView style={styles.container} enableEmptySections={true}
-                dataSource={this.state.dataSource}
+                dataSource={this.state.addFriendsList}
                 renderRow={(user) => {
                   return (
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                      onPress={e => this.onPressNewFriend(user.username, this.state.dataSource, this.state.addFriendsList)}>
                       <View style={styles.box}>
                       <Image style={styles.image} source={{uri: user.image}}/>
-                        <Text style={styles.username}>Click to add user</Text>
+                        <Text style={styles.username} >{user.username}</Text>
                       </View>
                     </TouchableOpacity>
                   )
