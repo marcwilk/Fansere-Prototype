@@ -2,40 +2,65 @@ import React from 'react'
 import {StyleSheet, Text, View} from 'react-native';
 import { Header } from 'react-native-elements'
 import MapView from 'react-native-maps'
+import {Marker} from 'react-native-maps'
 
 export default class BarMap extends React.Component {
+
   constructor(props) {
     super(props)
     this.state = {
-      userLocation: null
+      userLocation: null,
+      userName : 'MarkWilk_69',
+      barLocations : []
     }
   }
 
   componentDidMount() {
     navigator.geolocation.getCurrentPosition(position => {
-      console.log(position)
       this.setState({
         userLocation: {
           latitude: position.coords.latitude,
           longitude: position.coords.longitude,
-          latitudeDelta: 0.1922,
-          longitudeDelta: 0.1421
+          latitudeDelta: 0.0122,
+          longitudeDelta: 0.0021
         }
       })
+      fetch('https://findplaces-d9c94.firebaseio.com/places.json')
+      .then(res=> res.json())
+      .then(parsedRes =>{
+       const barsArray = []
+       for (const key in parsedRes){
+         barsArray.push({
+           latitude :parsedRes[key].latitude,
+           longitude :parsedRes[key].longitude,
+           barName : parsedRes[key].BarName,
+           id : key
+         })
+       }
+       this.setState({barLocations : barsArray})
+      })
+      .catch(err=> console.log(err))
     }, err => console.log(err),
     { timeout: 5000, maximumAge: 5000 }
   )
   }
 
   render() {
-    console.log(this.state.userLocation)
+    let userLocationMarker = null
+      if(this.state.userLocation) {
+        userLocationMarker = <Marker image={('https://www.bootdey.com/img/Content/avatar/avatar1.png')} coordinate={this.state.userLocation}/>
+      }
+
+  const barLocations = this.state.barLocations.map(bar => <Marker title={bar.barName}  coordinate={bar} key={bar.id}/>)
+   console.log(barLocations)
     return (
       <View>
-      <View>
       <Header backgroundColor="rgb(126, 217, 75)"   centerComponent={{ text: 'Watch This Game', style: { color: '#fff', fontSize: 22, fontWeight: 'bold' } }} />
-      </View>
       <View style={styles.mapContainer}>
-        <MapView  style={styles.map}/>
+        <MapView  style={styles.map} region={this.state.userLocation} barLocations={this.state.barLocations}>
+            {userLocationMarker}
+            {barLocations}
+        </MapView>
     </View>
   </View> )
   }
