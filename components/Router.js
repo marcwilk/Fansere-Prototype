@@ -13,17 +13,18 @@ const TabNavigator = createBottomTabNavigator({
   SignUp: SignUp,
   Schedule: Schedule,
   ScheduleItem: ScheduleItem
-}, {tabBarOptions: {
-  activeTintColor: '#fff',
-  inactiveTintColor: 'black',
+  }, {tabBarOptions: {
+  activeTintColor: '#7ed957',
+  inactiveTintColor: '#ffffff',
   labelStyle: {
-    fontSize: 14
+    fontSize: 14,
   },
   style: {
-    backgroundColor: '#7ed957',
-    color: '#7ed957'
-  }
-}})
+    backgroundColor: '#545454',
+    color: '#7ed957',
+  },
+},
+})
 
 
 export const Nav = createAppContainer(TabNavigator)
