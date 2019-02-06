@@ -1,7 +1,9 @@
 import React from 'react'
-
-import { StyleSheet, Text, TextInput, View, Image, ScrollView, KeyboardAvoidingView } from 'react-native';
-import { Avatar, ButtonGroup, Header, Card, ListItem, Button, Icon } from 'react-native-elements';
+import { StyleSheet, Text, Button, View, Image } from 'react-native'
+import { Avatar, ButtonGroup, Header } from 'react-native-elements'
+import EditProfile from './EditProfile'
+import Friends from './Friends'
+import Teams from './Teams'
 
 export default class Home extends React.Component {
 
@@ -9,50 +11,92 @@ export default class Home extends React.Component {
     super(props)
     this.state = {
       selectedIndex: 2,
-      text: "Placeholder text"
+      newUsername: '',
+      newLocation: '',
+      newTagline: '',
+      username: 'Marc_Wilk',
+      location: 'Boulder, CO',
+      tagline: 'Jordan > LeBron'
     }
     this.updateIndex = this.updateIndex.bind(this)
   }
   updateIndex(selectedIndex) {
     this.setState({selectedIndex})
   }
+  updateUsername = (text) => {
+    this.setState({ newUsername: text })
+  }
+  updateLocation = (text) => {
+    this.setState({ newLocation: text })
+  }
+  updateTagline = (text) => {
+    this.setState({ newTagline: text })
+  }
+  submitUsername = (username) => {
+    this.setState({ username: this.state.newUsername })
+  }
+  submitLocation = (text) => {
+    this.setState({ location: this.state.newLocation })
+  }
+  submitTagline = (tagline) => {
+    this.setState({ tagline: this.state.newTagline })
+  }
+  toggleView = () => {
+    if(this.state.selectedIndex === 0) {
+      return (
+        <EditProfile
+          username = {this.state.username}
+          location = {this.state.location}
+          tagline = {this.state.tagline}
+          updateUsername = {this.updateUsername}
+          updateLocation = {this.updateLocation}
+          updateTagline = {this.updateTagline}
+          submitUsername = {this.submitUsername}
+          submitLocation = {this.submitLocation}
+          submitTagline = {this.submitTagline}
+        />
+      )
+    }
+    if(this.state.selectedIndex === 1) {
+      return (
+        <Friends
+        />
+      )
+    }
+    if(this.state.selectedIndex === 2) {
+      return (
+        <Teams
+        />
+      )
+    }
+  }
 
   render() {
-
-    const buttons = ['Edit Profile', 'Find Friends', 'Rosters']
+    const buttons = ['Edit Profile', 'Friends', 'Teams']
     const { selectedIndex } = this.state
-
-    const users = [
-     {
-        name: 'brynn',
-        avatar: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'
-     }
-    ]
-
     return (
-
       <View style={styles.container}>
-
         <Header
-        placement="center"
-        centerComponent={{ text: 'Profile', style: { color: 'white', fontSize: 22 }}}
-        backgroundColor="#7ed957"
-        placement="center"
-        centerComponent={{ text: 'Profile', style: { color: 'white', fontSize: 22, fontWeight: 'bold' }}}
+          backgroundColor='#7ed957'
+          placement='center'
+          centerComponent={{ text: 'Profile', style: { color: 'white', fontSize: 20, fontWeight: 'bold' }}}
         />
-
-        <Text style={styles.profileText} h1>Profile Username</Text>
-
-        <Avatar size="large" onPress={() => console.log("Works!")}
-          source={{
-            uri:
-              'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
-          }}
-          showEditButton
-        />
-
-        <Text style={styles.taglineText} h2>"Here goes a tagline"</Text>
-
+        <View style={{flexDirection: 'row'}}>
+          <View style={styles.headerContent}>
+              <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar1.png'}}/>
+          </View>
+          <View style={{justifyContent: 'flex-end', padding: 50}}>
+            <Text
+              style={styles.profileText} h1>{this.state.username}
+            </Text>
+            <Text
+            style={styles.locationText} h2>{this.state.location}
+            </Text>
+            <Text
+              style={styles.taglineText} h2>{this.state.tagline}
+            </Text>
+          </View>
+        </View>
         <ButtonGroup
           onPress={this.updateIndex}
           selectedIndex={selectedIndex}
@@ -60,24 +104,7 @@ export default class Home extends React.Component {
           buttons={buttons}
           containerStyle={{height: 30}}
         />
-
-
-        <Card
-          containerStyle={{height: 325}}
-          title='Edit Profile Details'>
-          <TextInput
-            style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-            onChangeText={(text) => this.setState({text})}
-            value={this.state.text}
-          />
-          <br/>
-          <TextInput
-            style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-            onChangeText={(text) => this.setState({text})}
-            value={this.state.text}
-          />
-        </Card>
-
+        {this.toggleView()}
       </View>
     )
   }
@@ -86,14 +113,31 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
     alignItems: 'center',
     color: '#545454',
+    padding: 10
   },
   profileText: {
     fontWeight: 'bold',
     color: 'white',
+    fontSize: 20
+  },
+  locationText: {
+    color: 'white',
+    fontSize: 16
   },
   taglineText: {
     color: 'white',
+    fontSize: 16
+  },
+  avatar: {
+    width: 130,
+    height: 130,
+    borderRadius: 63,
+    borderWidth: 4,
+    borderColor: '#fff',
+    marginBottom: 20,
+    marginTop: 20,
   }
 })
