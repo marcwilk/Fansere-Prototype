@@ -115,8 +115,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
-    color: '#545454',
-    padding: 10
+    color: '#545454'
   },
   profileText: {
     fontWeight: 'bold',
