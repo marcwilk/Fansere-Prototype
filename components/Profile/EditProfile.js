@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, TextInput, Button, TouchableOpacity, ScrollView } from 'react-native'
+import { StyleSheet, View, Text, TextInput, Button, TouchableOpacity, ScrollView } from 'react-native'
 import { Card } from 'react-native-elements'
 
 export default class EditProfile extends React.Component {
@@ -7,8 +7,9 @@ export default class EditProfile extends React.Component {
   render() {
     return (
       <ScrollView>
+      <View style={styles.container}>
       <Card
-        containerStyle={{height: 350, width: 300, padding: 10, fontSize: 20}}
+        containerStyle={{width: 350, padding: 10, fontSize: 20}}
         title='Edit Profile Details'>
         <Text style={{color: 'black', fontSize: 16}}>
           Username:
@@ -28,6 +29,26 @@ export default class EditProfile extends React.Component {
           }>
            <Text style = {styles.submitButtonText}> Submit </Text>
         </TouchableOpacity>
+
+        <Text style={{color: 'black', fontSize: 16}}>
+          Location:
+        </Text>
+        <TextInput
+          underlineColorAndroid = 'transparent'
+          placeholder = {this.props.location}
+          placeholderTextColor = 'black'
+          autoCapitalize = 'none'
+          style={{height: 40, borderColor: 'gray', borderWidth: 1, padding: 10, margin: 10}}
+          onChangeText={this.props.updateLocation}
+        />
+        <TouchableOpacity
+          style = {styles.submitButton}
+          onPress = {
+            () => this.props.submitLocation(this.props.location)
+          }>
+           <Text style = {styles.submitButtonText}> Submit </Text>
+        </TouchableOpacity>
+
         <Text style={{color: 'black', fontSize: 16}}>
           Tagline:
         </Text>
@@ -47,6 +68,7 @@ export default class EditProfile extends React.Component {
            <Text style = {styles.submitButtonText}> Submit </Text>
         </TouchableOpacity>
       </Card>
+      </View>
       </ScrollView>
     )
   }

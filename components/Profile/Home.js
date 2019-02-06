@@ -12,8 +12,10 @@ export default class Home extends React.Component {
     this.state = {
       selectedIndex: 2,
       newUsername: '',
+      newLocation: '',
       newTagline: '',
       username: 'Marc_Wilk',
+      location: 'Boulder, CO',
       tagline: 'Jordan > LeBron'
     }
     this.updateIndex = this.updateIndex.bind(this)
@@ -22,14 +24,19 @@ export default class Home extends React.Component {
     this.setState({selectedIndex})
   }
   updateUsername = (text) => {
-    console.log('text', text)
     this.setState({ newUsername: text })
+  }
+  updateLocation = (text) => {
+    this.setState({ newLocation: text })
   }
   updateTagline = (text) => {
     this.setState({ newTagline: text })
   }
   submitUsername = (username) => {
     this.setState({ username: this.state.newUsername })
+  }
+  submitLocation = (text) => {
+    this.setState({ location: this.state.newLocation })
   }
   submitTagline = (tagline) => {
     this.setState({ tagline: this.state.newTagline })
@@ -39,10 +46,13 @@ export default class Home extends React.Component {
       return (
         <EditProfile
           username = {this.state.username}
+          location = {this.state.location}
           tagline = {this.state.tagline}
           updateUsername = {this.updateUsername}
+          updateLocation = {this.updateLocation}
           updateTagline = {this.updateTagline}
           submitUsername = {this.submitUsername}
+          submitLocation = {this.submitLocation}
           submitTagline = {this.submitTagline}
         />
       )
@@ -71,15 +81,22 @@ export default class Home extends React.Component {
           placement='center'
           centerComponent={{ text: 'Profile', style: { color: 'white', fontSize: 20, fontWeight: 'bold' }}}
         />
-        <View style={styles.headerContent}>
-            <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar1.png'}}/>
+        <View style={{flexDirection: 'row'}}>
+          <View style={styles.headerContent}>
+              <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar1.png'}}/>
+          </View>
+          <View style={{justifyContent: 'flex-end', padding: 50}}>
+            <Text
+              style={styles.profileText} h1>{this.state.username}
+            </Text>
+            <Text
+            style={styles.locationText} h2>{this.state.location}
+            </Text>
+            <Text
+              style={styles.taglineText} h2>{this.state.tagline}
+            </Text>
+          </View>
         </View>
-        <Text
-          style={styles.profileText} h1>{this.state.username}
-        </Text>
-        <Text
-          style={styles.taglineText} h2>{this.state.tagline}
-        </Text>
         <ButtonGroup
           onPress={this.updateIndex}
           selectedIndex={selectedIndex}
@@ -96,13 +113,19 @@ export default class Home extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
     alignItems: 'center',
-    color: '#545454'
+    color: '#545454',
+    padding: 10
   },
   profileText: {
     fontWeight: 'bold',
     color: 'white',
     fontSize: 20
+  },
+  locationText: {
+    color: 'white',
+    fontSize: 16
   },
   taglineText: {
     color: 'white',
@@ -114,7 +137,7 @@ const styles = StyleSheet.create({
     borderRadius: 63,
     borderWidth: 4,
     borderColor: '#fff',
-    marginBottom: 10,
-    marginTop: 10
+    marginBottom: 20,
+    marginTop: 20,
   }
 })
