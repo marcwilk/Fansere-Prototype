@@ -3,12 +3,13 @@ import { StyleSheet, Text, TextInput, Button, TouchableOpacity } from 'react-nat
 import { Card } from 'react-native-elements'
 
 export default class EditProfile extends React.Component {
+
   render() {
     return (
       <Card
-        containerStyle={{height: 350, width: 300, padding: 10}}
+        containerStyle={{height: 350, width: 300, padding: 10, fontSize: 20}}
         title='Edit Profile Details'>
-        <Text style={{color: 'black'}}>
+        <Text style={{color: 'black', fontSize: 16}}>
           Username:
         </Text>
         <TextInput
@@ -26,7 +27,7 @@ export default class EditProfile extends React.Component {
           }>
            <Text style = {styles.submitButtonText}> Submit </Text>
         </TouchableOpacity>
-        <Text style={{color: 'black'}}>
+        <Text style={{color: 'black', fontSize: 16}}>
           Tagline:
         </Text>
         <TextInput
@@ -52,18 +53,18 @@ export default class EditProfile extends React.Component {
 const styles = StyleSheet.create({
   profileText: {
     fontWeight: 'bold',
-    color: 'white',
+    color: 'white'
   },
   taglineText: {
-    color: 'white',
+    color: 'white'
   },
   submitButton: {
    backgroundColor: 'rgb(126, 217, 75)',
-   padding: 10,
    height: 40,
+   padding: 10,
    margin: 10
   },
-  submitButtonText:{
+  submitButtonText: {
     backgroundColor: 'rgb(126, 217, 75)',
     color: 'white'
   }

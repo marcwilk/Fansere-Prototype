@@ -6,6 +6,7 @@ import Friends from './Friends'
 import Teams from './Teams'
 
 export default class Home extends React.Component {
+
   constructor(props) {
     super(props)
     this.state = {
@@ -68,7 +69,7 @@ export default class Home extends React.Component {
         <Header
           backgroundColor='#7ed957'
           placement='center'
-          centerComponent={{ text: 'Profile', style: { color: 'white', fontSize: 22, fontWeight: 'bold' }}}
+          centerComponent={{ text: 'Profile', style: { color: 'white', fontSize: 20, fontWeight: 'bold' }}}
         />
         <Text
           style={styles.profileText} h1>{this.state.username}
@@ -76,7 +77,7 @@ export default class Home extends React.Component {
         <Avatar size='large' onPress={() => console.log('it works!')}
           source={{
             uri:
-              'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+              'https://bootdey.com/img/Content/avatar/avatar1.png',
           }}
           showEditButton
         />
@@ -101,13 +102,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    color: '#545454',
+    color: '#545454'
   },
   profileText: {
     fontWeight: 'bold',
-    color: 'white',
+    color: 'white'
   },
   taglineText: {
-    color: 'white',
+    color: 'white'
   }
 })
