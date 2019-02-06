@@ -1,11 +1,12 @@
 import React from 'react'
-import { StyleSheet, Text, TextInput, Button, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, TextInput, Button, TouchableOpacity, ScrollView } from 'react-native'
 import { Card } from 'react-native-elements'
 
 export default class EditProfile extends React.Component {
 
   render() {
     return (
+      <ScrollView>
       <Card
         containerStyle={{height: 350, width: 300, padding: 10, fontSize: 20}}
         title='Edit Profile Details'>
@@ -46,6 +47,7 @@ export default class EditProfile extends React.Component {
            <Text style = {styles.submitButtonText}> Submit </Text>
         </TouchableOpacity>
       </Card>
+      </ScrollView>
     )
   }
 }

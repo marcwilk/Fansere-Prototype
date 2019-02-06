@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, Button, View } from 'react-native'
+import { StyleSheet, Text, Button, View, Image } from 'react-native'
 import { Avatar, ButtonGroup, Header } from 'react-native-elements'
 import EditProfile from './EditProfile'
 import Friends from './Friends'
@@ -71,19 +71,14 @@ export default class Home extends React.Component {
           placement='center'
           centerComponent={{ text: 'Profile', style: { color: 'white', fontSize: 20, fontWeight: 'bold' }}}
         />
+        <View style={styles.headerContent}>
+            <Image style={styles.avatar} source={{uri: 'https://bootdey.com/img/Content/avatar/avatar1.png'}}/>
+        </View>
         <Text
           style={styles.profileText} h1>{this.state.username}
         </Text>
-        <Avatar size='large' onPress={() => console.log('it works!')}
-          source={{
-            uri:
-              'https://bootdey.com/img/Content/avatar/avatar1.png',
-          }}
-          showEditButton
-        />
         <Text
-          style={styles.taglineText} h2>
-          {this.state.tagline}
+          style={styles.taglineText} h2>{this.state.tagline}
         </Text>
         <ButtonGroup
           onPress={this.updateIndex}
@@ -106,9 +101,20 @@ const styles = StyleSheet.create({
   },
   profileText: {
     fontWeight: 'bold',
-    color: 'white'
+    color: 'white',
+    fontSize: 20
   },
   taglineText: {
-    color: 'white'
+    color: 'white',
+    fontSize: 16
+  },
+  avatar: {
+    width: 130,
+    height: 130,
+    borderRadius: 63,
+    borderWidth: 4,
+    borderColor: '#fff',
+    marginBottom: 10,
+    marginTop: 10
   }
 })
