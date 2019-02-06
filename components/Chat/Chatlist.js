@@ -6,9 +6,7 @@ import { Header, ListItem } from 'react-native-elements';
 export default class Chatlist extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
 
-    }
   }
 
   renderChatList(obj) {
