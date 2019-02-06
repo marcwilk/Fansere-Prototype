@@ -4,8 +4,8 @@ import { StyleSheet, Text, View, ScrollView, TouchableOpacity, ListView, Image }
 export default class Friends extends React.Component {
 
   constructor(props) {
-    super(props);
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    super(props)
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
     this.state = {
       dataSource: ds.cloneWithRows([
          {image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username:'johndoe1'},
@@ -15,7 +15,7 @@ export default class Friends extends React.Component {
          {image: 'https://bootdey.com/img/Content/avatar/avatar1.png', username:'johndoe5'},
          {image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username:'johndoe6'},
       ]),
-    };
+    }
   }
 
   render() {
@@ -44,7 +44,7 @@ export default class Friends extends React.Component {
             </View>
         </View>
       </ScrollView>
-    );
+    )
   }
 }
 
@@ -101,4 +101,4 @@ const styles = StyleSheet.create({
     alignSelf:'center',
     marginLeft:10
   }
-});
+})
