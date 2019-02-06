@@ -16,6 +16,7 @@ const TabNavigator = createBottomTabNavigator({
   BarMap: BarMap,
 }, {tabBarOptions: {
   activeTintColor: '#7ed957',
+  inactiveTintColor: '#ffffff',
   labelStyle: {
     fontSize: 14,
   },

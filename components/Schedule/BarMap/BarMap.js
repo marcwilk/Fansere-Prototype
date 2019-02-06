@@ -48,10 +48,10 @@ export default class BarMap extends React.Component {
   render() {
     let userLocationMarker = null
       if(this.state.userLocation) {
-        userLocationMarker = <Marker image={('https://www.bootdey.com/img/Content/avatar/avatar1.png')} coordinate={this.state.userLocation}/>
+        userLocationMarker = <Marker title={this.state.userName} coordinate={this.state.userLocation} image={'https://www.bootdey.com/img/Content/avatar/avatar1.png'} style={{borderRadius: 50}}/>
       }
 
-  const barLocations = this.state.barLocations.map(bar => <Marker title={bar.barName}  coordinate={bar} key={bar.id}/>)
+  const barLocations = this.state.barLocations.map(bar => <Marker title={bar.barName}  coordinate={bar} key={bar.id} pinColor='rgb(126, 217, 75)'/>)
    console.log(barLocations)
     return (
       <View>
@@ -70,10 +70,12 @@ const styles =StyleSheet.create({
   mapContainer: {
     width : '100%',
     height: 645,
-
   },
   map: {
     width: '100%',
     height: '100%'
+  },
+  userMarker:{
+    borderRadius: 50
   }
 })
