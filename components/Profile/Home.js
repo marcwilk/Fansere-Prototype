@@ -14,11 +14,12 @@ export default class Home extends React.Component {
       newUsername: '',
       newLocation: '',
       newTagline: '',
-      username: 'Marc_Wilk',
+      userName: 'Marc Wilk',
       location: 'Boulder, CO',
       tagline: 'Jordan > LeBron'
     }
     this.updateIndex = this.updateIndex.bind(this)
+    this.addFriend = this.addFriend.bind(this)
   }
   updateIndex(selectedIndex) {
     this.setState({selectedIndex})
@@ -45,7 +46,7 @@ export default class Home extends React.Component {
     if(this.state.selectedIndex === 0) {
       return (
         <EditProfile
-          username = {this.state.username}
+          username = {this.state.userName}
           location = {this.state.location}
           tagline = {this.state.tagline}
           updateUsername = {this.updateUsername}
@@ -60,6 +61,7 @@ export default class Home extends React.Component {
     if(this.state.selectedIndex === 1) {
       return (
         <Friends
+          add={this.addFriend}
         />
       )
     }
@@ -70,6 +72,26 @@ export default class Home extends React.Component {
       )
     }
   }
+
+  async addFriend(newFriend) {
+    let obj = {
+      sender_name: this.state.userName,
+      receiver_name: newFriend,
+      message: `${this.state.userName} says hi!`
+    }
+    const response = await fetch('http://localhost:3007/messages/create', {
+      method: 'POST',
+      body: JSON.stringify(obj),
+      headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        }
+    })
+    const json = await response.json()
+    //this.componentDidMount()
+  }
+
+
 
   render() {
     const buttons = ['Edit Profile', 'Friends', 'Teams']
@@ -87,7 +109,7 @@ export default class Home extends React.Component {
           </View>
           <View style={{justifyContent: 'flex-end', padding: 50}}>
             <Text
-              style={styles.profileText} h1>{this.state.username}
+              style={styles.profileText} h1>{this.state.userName}
             </Text>
             <Text
             style={styles.locationText} h2>{this.state.location}
