@@ -5,17 +5,34 @@ export default class Friends extends React.Component {
 
   constructor(props) {
     super(props)
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
+    this.ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
     this.state = {
-      dataSource: ds.cloneWithRows([
+      dataSource: [
          {image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username:'Johndoe1'},
          {image: 'https://bootdey.com/img/Content/avatar/avatar2.png', username:'Johndoe2'},
          {image: 'https://bootdey.com/img/Content/avatar/avatar3.png', username:'Johndoe3'},
          {image: 'https://bootdey.com/img/Content/avatar/avatar4.png', username:'Johndoe4'},
          {image: 'https://bootdey.com/img/Content/avatar/avatar1.png', username:'Johndoe5'},
          {image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username:'Johndoe6'},
-      ]),
+      ],
+      addFriendsList: [
+         {image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username:'Patrick Mahomes'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar2.png', username:'Tom Brady'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar3.png', username:'Aaron Rodgers'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar4.png', username:'Louie C.K.'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar1.png', username:'Kirk Cousins'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username:'Bill Cosby'},
+      ]
     }
+  }
+
+  onPressNewFriend(input, arr1, arr2) {
+    this.props.add(input)
+    let filtered = arr2.filter(obj => obj.username !== input)
+    let objToMove = arr2.find(obj => obj.username === input)
+    this.setState({dataSource: [...this.state.dataSource, objToMove], addFriendsList: filtered})
+    this.forceUpdate()
+
   }
 
   render() {
@@ -30,13 +47,14 @@ export default class Friends extends React.Component {
             </View>
             <View style={styles.body}>
               <ListView style={styles.container} enableEmptySections={true}
-                dataSource={this.state.dataSource}
+                dataSource={this.ds.cloneWithRows(this.state.addFriendsList)}
                 renderRow={(user) => {
                   return (
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                      onPress={e => this.onPressNewFriend(user.username, this.state.dataSource, this.state.addFriendsList)}>
                       <View style={styles.box}>
                       <Image style={styles.image} source={{uri: user.image}}/>
-                        <Text style={styles.username}>Click to add user</Text>
+                        <Text style={styles.username} >{user.username}</Text>
                       </View>
                     </TouchableOpacity>
                   )
@@ -50,7 +68,7 @@ export default class Friends extends React.Component {
             </View>
             <View style={styles.body}>
               <ListView style={styles.container} enableEmptySections={true}
-                dataSource={this.state.dataSource}
+                dataSource={this.ds.cloneWithRows(this.state.dataSource)}
                 renderRow={(user) => {
                   return (
                     <TouchableOpacity>

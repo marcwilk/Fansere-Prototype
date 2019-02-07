@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {StyleSheet, Text, View, ScrollView, KeyboardAvoidingView } from 'react-native';
 import { Header, ListItem, Card, Button } from 'react-native-elements';
 import axios from 'axios'
@@ -11,107 +11,74 @@ export default class ScheduleItem extends React.Component {
   constructor() {
       super()
 
-      this.nba = new NBA()
-      this._renderGame = this._renderGame.bind(this)
-    }
+state ={
+  TodayNHLGameData: [],
+  CurrentNHLSeasonData: [],
+  games: [],
 
-    getTeamAbbreviation(teamID) {
-      return Object.keys(TeamMap).find((x) => {
-        return TeamMap[x].id == teamID
-      }).toUpperCase()
-    }
+}
 
-    _selectGame(game) {
-      // get key of according to team id
-      const homeTeamAbbreviation = this.getTeamAbbreviation(game.hTeam.teamId)
-      const awayTeamAbbreviation = this.getTeamAbbreviation(game.vTeam.teamId)
+  constructor() {
+    super();
+    axios.get('https://statsapi.web.nhl.com/api/v1/schedule')
+     .then(res=> {
 
-      const selectedGame = {
-        awayTeam: {
-          abbreviation: awayTeamAbbreviation,
-          teamID: game.vTeam.teamId
-        },
-        homeTeam: {
-          abbreviation: homeTeamAbbreviation,
-          teamID: game.hTeam.teamId
-        },
-        gameID: game.gameId
-      }
+       try {
+       this.setState({ TodayNHLGameData: res.data.dates[0]})
 
-      let dateOfGame = game.startDateEastern
-      const year     = dateOfGame.substring(0,4)
-      const month    = dateOfGame.substring(4,6)
-      const day      = dateOfGame.substring(6,8)
-      dateOfGame     = month + '/' + day + '/' + year
+     }
+     catch {
+       this.setState({hometeamName: 'There are no games today' , awayTeamNames: ''})
+     }
+       const gamesData = this.state.TodayNHLGameData.games
+       const todayDate = this.state.TodayNHLGameData.date
+       const awayArr = gamesData.map((games=>{
+         let obj={}
+         obj.home = games.teams.home.team.name
+         obj.away = games.teams.away.team.name
+         obj.date = todayDate
+         obj.homeScore = games.teams.home.score
+         obj.awayScore = games.teams.away.score
+         this.setState({games: [...this.state.games, obj]})
+       }))
+     })
+
+     axios.get('https://statsapi.web.nhl.com/api/v1/schedule?startDate=2018-10-03&endDate=2019-04-06')
+    .then(res=>{
+        this.setState({CurrentNHLSeasonData: res.data})
+    })
+  }
 
       this.props.changeDate(dateOfGame)
       this.props.selectGame(selectedGame)
       this.props.navigator.navigate('Game', { title: `${awayTeamAbbreviation} vs ${homeTeamAbbreviation}`})
     }
 
-    _keyExtractor(game){
-      return game.gameId
-    }
+renderMap=(index)=>{
+  console.log(index)
+}
 
-    _renderGame(game) {
-      game = game.item
-
-      const homeTeam = getTeamFromTeamMap(game.hTeam.teamId).team
-      const awayTeam = getTeamFromTeamMap(game.vTeam.teamId).team
-      const isSelectedTeamHome = game.hTeam.teamId === this.props.teamID
-      const homeScore = game.hTeam.score
-      const awayScore = game.vTeam.score
-      const outcome = isSelectedTeamHome ? (parseInt(homeScore) > parseInt(awayScore) ? 'W' : 'L') : (parseInt(awayScore) > parseInt(homeScore) ? 'W' : 'L')
-      const matchup = isSelectedTeamHome ? `vs ${awayTeam}` : `@ ${homeTeam}`
-      const date = formatDateString(game.startDateEastern)
-      const nugget = game.nugget.text
-
-      return(
-        <TouchableOpacity style={styles.gameCell} onPress={() => { this._selectGame(game) }}>
-          <View style={{ flexDirection: 'row', flex: 2 }}>
-            <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-              <Text style={styles.textSecondary}> {outcome} </Text>
-            </View>
-            <View style={{ flex: 2, flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', marginLeft: 10 }}>
-              <Text style={styles.textSecondary}> {date} {matchup} </Text>
-            </View>
-            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', marginRight: 5 }}>
-              <Text style={styles.textSecondary}> {awayScore} - {homeScore} </Text>
-            </View>
-          </View>
-          <View style={{ flex: 1 }}>
-            <Text style={[styles.textSecondary, { fontSize: 14, color: '#C7C7C7' }]}> {nugget} </Text>
-          </View>
-        </TouchableOpacity>
-      )
-    }
-  }
-
-  const styles = StyleSheet.create({
-    textPrimary: {
-      color: '#D3D3D3',
-      fontSize: 24,
-      fontFamily: 'Rubik-Light'
-    },
-    textSecondary: {
-      color: '#D3D3D3',
-      fontSize: 18,
-      fontFamily: 'Rubik-Light'
-    },
-    gameCell: {
-      flexDirection: 'column',
-      marginLeft: 10,
-      marginRight: 10,
-      height: 65,
-      borderBottomColor: '#333333',
-      borderBottomWidth: 1,
-    },
-  })
-
-  function mapStateToProps(state) {
-    return {
-      teamID: state.scores.selectedTeam.teamID
-    }
+  render() {
+    console.log(this.state.userLocation)
+    return (
+      <ScrollView>
+        <Header backgroundColor="rgb(126, 217, 75)"   centerComponent={{ text: 'NHL Schedule', style: { color: '#fff', fontSize: 22, fontWeight: 'bold' } }} />
+        <View>
+        {
+    this.state.games.map((game, index) => (
+      <ListItem
+        key={index}
+        onPress={this.renderMap.bind(this, index)}
+        title={`${game.away} ${game.awayScore}`}
+        subtitle={`${game.home} ${game.homeScore}`}
+        rightTitle={game.date}
+        style={styles.list} containerStyle={{backgroundColor: 'black'}} titleStyle={{ color: 'white', fontSize:15, fontWeight: 'bold'}} rightTitleStyle={{ color: 'white', fontWeight: 'bold', fontSize: 15 }} subtitleStyle={{ color: 'white', fontWeight: 'bold'}} chevron chevronColor="black"
+       />
+     ))
+     }
+     </View>
+      </ScrollView>
+    )
   }
 
   function mapDispatchToProps(dispatch) {
@@ -120,3 +87,10 @@ export default class ScheduleItem extends React.Component {
       selectGame: (selectedGame) => dispatch(selectGame(selectedGame))
     }
 }
+
+const styles = StyleSheet.create({
+  list: {
+    borderWidth: .5,
+    borderColor: "rgb(126, 217, 87)",
+  }
+})
