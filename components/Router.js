@@ -4,7 +4,7 @@ import Chat from './Chat/Chat'
 import Chatdisplay from './Chat/Chatdisplay'
 import SignUp from './SignUp/SignUp'
 import Home from './Profile/Home'
-import App from '../containers/App'
+import Schedule from './Schedule/Schedule'
 import ScheduleItem from './Schedule/ScheduleItem'
 const TabNavigator = createBottomTabNavigator({
   Chat: Chatdisplay,
