@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, ListView, Image } from 'react-native'
 
 export default class Teams extends React.Component {
+<<<<<<< HEAD
   constructor(props) {
     super(props)
     this.ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
@@ -16,6 +17,8 @@ export default class Teams extends React.Component {
       ]
     }
   }
+=======
+>>>>>>> 0623c6f5b02df4f2bcf2838e3eb7fc6fd31d962b
 
   render() {
     return (
