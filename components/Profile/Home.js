@@ -48,7 +48,7 @@ export default class Home extends React.Component {
     this.setState({ newTagline: text })
   }
   submitUsername = (username) => {
-    this.setState({ username: this.state.newUsername })
+    this.setState({ userName: this.state.newUsername })
   }
   submitLocation = (text) => {
     this.setState({ location: this.state.newLocation })

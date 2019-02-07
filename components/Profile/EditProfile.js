@@ -9,7 +9,7 @@ export default class EditProfile extends React.Component {
       <ScrollView>
       <View style={styles.container}>
       <Card
-        containerStyle={{width: 350, padding: 10, fontSize: 20}}
+        containerStyle={{width: 350, padding: 10}}
         title='Edit Profile Details'>
         <Text style={{color: 'black', fontSize: 16}}>
           Username:
