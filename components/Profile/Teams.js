@@ -6,7 +6,7 @@ export default class Teams extends React.Component {
     super(props)
     this.ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
     this.state = {
-      addFriendsList: [
+      teamList: [
          {image: 'http://content.sportslogos.net/logos/6/229/full/8926_denver_nuggets-primary-2019.png', teamname:'Denver Nuggets'},
          {image: 'http://content.sportslogos.net/logos/18/275/full/5990.gif', teamname:'The Denver Nuggets'},
          {image: 'http://content.sportslogos.net/logos/6/229/full/qdcpbu7weno1htqgg5kk10i8o.gif', teamname:'Nuggets of Denver'},
@@ -15,15 +15,6 @@ export default class Teams extends React.Component {
          {image: 'http://content.sportslogos.net/logos/6/229/full/tht30q65rj1sca9rhsq5zfoih.gif', teamname:'You Know It'},
       ]
     }
-  }
-
-  onPressNewFriend(input, arr1, arr2) {
-    this.props.add(input)
-    let filtered = arr2.filter(obj => obj.teamname !== input)
-    let objToMove = arr2.find(obj => obj.teamname === input)
-    this.setState({dataSource: [...this.state.dataSource, objToMove], addFriendsList: filtered})
-    this.forceUpdate()
-
   }
 
   render() {
@@ -38,16 +29,13 @@ export default class Teams extends React.Component {
             </View>
             <View style={styles.body}>
               <ListView style={styles.container} enableEmptySections={true}
-                dataSource={this.ds.cloneWithRows(this.state.addFriendsList)}
+                dataSource={this.ds.cloneWithRows(this.state.teamList)}
                 renderRow={(user) => {
                   return (
-                    <TouchableOpacity
-                      onPress={e => this.onAddNewTeam(user.teamname, this.state.dataSource, this.state.addFriendsList)}>
                       <View style={styles.box}>
                       <Image style={styles.image} source={{uri: user.image}}/>
                         <Text style={styles.teamname} >{user.teamname}</Text>
                       </View>
-                    </TouchableOpacity>
                   )
               }}/>
             </View>
