@@ -2,14 +2,8 @@ import React from 'react'
 import {StyleSheet, Text, View, ScrollView, KeyboardAvoidingView } from 'react-native';
 import { Header, ListItem, Card, Button } from 'react-native-elements';
 import axios from 'axios'
-import NBA, { getTeamFromTeamMap } from '../../utilities/nba'
-import TeamMap from '../../utilities/TeamMap'
-import { formatDateString } from '../../utilities/date'
-import { selectGame, changeDate } from '../../actions/actions'
 
 export default class ScheduleItem extends React.Component {
-  constructor() {
-      super()
 
 state ={
   TodayNHLGameData: [],
@@ -49,10 +43,6 @@ state ={
     })
   }
 
-      this.props.changeDate(dateOfGame)
-      this.props.selectGame(selectedGame)
-      this.props.navigator.navigate('Game', { title: `${awayTeamAbbreviation} vs ${homeTeamAbbreviation}`})
-    }
 
 renderMap=(index)=>{
   console.log(index)
@@ -80,12 +70,6 @@ renderMap=(index)=>{
       </ScrollView>
     )
   }
-
-  function mapDispatchToProps(dispatch) {
-    return {
-      changeDate: (date) => dispatch(changeDate(date)),
-      selectGame: (selectedGame) => dispatch(selectGame(selectedGame))
-    }
 }
 
 const styles = StyleSheet.create({

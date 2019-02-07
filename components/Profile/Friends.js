@@ -19,7 +19,7 @@ export default class Friends extends React.Component {
          {image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username:'Patrick Mahomes'},
          {image: 'https://bootdey.com/img/Content/avatar/avatar2.png', username:'Tom Brady'},
          {image: 'https://bootdey.com/img/Content/avatar/avatar3.png', username:'Aaron Rodgers'},
-         {image: 'https://bootdey.com/img/Content/avatar/avatar4.png', username:'Louie C.K.'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar4.png', username:'Louis C.K.'},
          {image: 'https://bootdey.com/img/Content/avatar/avatar1.png', username:'Kirk Cousins'},
          {image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username:'Bill Cosby'},
       ]
