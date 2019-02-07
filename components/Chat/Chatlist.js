@@ -18,7 +18,7 @@ export default class Chatlist extends React.Component {
       <ScrollView>
         <Header
           backgroundColor="rgb(126, 217, 75)"
-          centerComponent={{ text: 'Chats', style: { color: '#fff', fontSize: 22, fontWeight: 'bold' } }}
+          centerComponent={{ text: 'Chat', style: { color: '#fff', fontSize: 22, fontWeight: 'bold' } }}
         />
         {this.renderChatList(this.props.messages)}
       </ScrollView>

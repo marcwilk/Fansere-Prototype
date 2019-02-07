@@ -3,6 +3,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import { Header } from 'react-native-elements'
 import MapView from 'react-native-maps'
 import {Marker} from 'react-native-maps'
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class BarMap extends React.Component {
 
@@ -52,10 +53,9 @@ export default class BarMap extends React.Component {
       }
 
   const barLocations = this.state.barLocations.map(bar => <Marker title={bar.barName}  coordinate={bar} key={bar.id} pinColor='rgb(126, 217, 75)'/>)
-   console.log(barLocations)
     return (
       <View>
-      <Header backgroundColor="rgb(126, 217, 75)"   centerComponent={{ text: 'Watch This Game', style: { color: '#fff', fontSize: 22, fontWeight: 'bold' } }} />
+      <Header backgroundColor="rgb(126, 217, 75)"  leftComponent={<Icon name="arrow-left" size={17} color="white" onPress={this.props.onPress}/>} centerComponent={{ text: 'Watch This Game', style: { color: '#fff', fontSize: 22, fontWeight: 'bold' } }} />
       <View style={styles.mapContainer}>
         <MapView  style={styles.map} region={this.state.userLocation} barLocations={this.state.barLocations}>
             {userLocationMarker}

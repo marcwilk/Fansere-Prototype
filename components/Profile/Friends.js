@@ -8,20 +8,22 @@ export default class Friends extends React.Component {
     this.ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
     this.state = {
       dataSource: [
-         {image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username:'Johndoe1'},
-         {image: 'https://bootdey.com/img/Content/avatar/avatar2.png', username:'Johndoe2'},
-         {image: 'https://bootdey.com/img/Content/avatar/avatar3.png', username:'Johndoe3'},
-         {image: 'https://bootdey.com/img/Content/avatar/avatar4.png', username:'Johndoe4'},
-         {image: 'https://bootdey.com/img/Content/avatar/avatar1.png', username:'Johndoe5'},
-         {image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username:'Johndoe6'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username:'Tim Brady'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar2.png', username:'Erin Rodgers'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar3.png', username:'#EliteJoeFlacco'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar4.png', username:'Mark Mahomes'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar1.png', username:'Peter Rivers'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username:'Wario Lemieux'},
       ],
       addFriendsList: [
-         {image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username:'Patrick Mahomes'},
-         {image: 'https://bootdey.com/img/Content/avatar/avatar2.png', username:'Tom Brady'},
-         {image: 'https://bootdey.com/img/Content/avatar/avatar3.png', username:'Aaron Rodgers'},
-         {image: 'https://bootdey.com/img/Content/avatar/avatar4.png', username:'Louie C.K.'},
-         {image: 'https://bootdey.com/img/Content/avatar/avatar1.png', username:'Kirk Cousins'},
-         {image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username:'Bill Cosby'},
+         {image: 'https://cdn.shopify.com/s/files/1/1598/4133/products/CW-HG-PL1007-Dandy-Lion-10ich-Fine-China-Plate.jpg?v=1538002295', username:'Tucker Nemcek'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar2.png', username:'Will Brown'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar6.png', username:'Sean Tansey'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar4.png', username:'Louis C.K.'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar7.png', username:'Ben Strater'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar8.png', username:'Owen Thompson'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar3.png', username:'Mark Fantini'},
+         {image: 'https://bootdey.com/img/Content/avatar/avatar1.png', username:'Phil Borgenicht'},
       ]
     }
   }
