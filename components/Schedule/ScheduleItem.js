@@ -44,12 +44,7 @@ state ={
   }
 
 
-renderMap=(index)=>{
-  console.log(index)
-}
-
   render() {
-    console.log(this.state.userLocation)
     return (
       <ScrollView>
         <Header backgroundColor="rgb(126, 217, 75)"   centerComponent={{ text: 'NHL Schedule', style: { color: '#fff', fontSize: 22, fontWeight: 'bold' } }} />
@@ -58,7 +53,7 @@ renderMap=(index)=>{
     this.state.games.map((game, index) => (
       <ListItem
         key={index}
-        onPress={this.renderMap.bind(this, index)}
+        onPress={this.props.onPress}
         title={`${game.away} ${game.awayScore}`}
         subtitle={`${game.home} ${game.homeScore}`}
         rightTitle={game.date}
