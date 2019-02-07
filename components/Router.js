@@ -24,6 +24,18 @@ const TabNavigator = createBottomTabNavigator({
     color: '#7ed957',
   },
 },
-})
+{
+  tabBarOptions: {
+    activeTintColor: '#7ed957',
+    inactiveTintColor: '#ffffff',
+    labelStyle: {
+      fontSize: 14,
+    },
+    style: {
+      backgroundColor: '#545454',
+      color: '#7ed957',
+    },
+  },
+});
 
 export const Nav = createAppContainer(TabNavigator)

@@ -8,17 +8,10 @@ import Teams from './Teams'
 export default class Home extends React.Component {
 
   // async componentDidMount() {
-  //   const response = await fetch('http://localhost:3007/users', {
-  //     method: 'POST',
-  //     body: JSON.stringify({username: this.state.username}),
-  //     headers: {
-  //         'Content-Type': 'application/json',
-  //         'Accept': 'application/json',
-  //       }
-  //   })
+  //   const response = await fetch('https://fanseredb.herokuapp.com/users')
+  //   console.log("response", response)
   //   const json = await response.json()
-  //   const username = this.convertToObject(json)
-  //   this.setState({username: username})
+  //   this.setState({username: json.username})
   // }
 
   constructor(props) {
