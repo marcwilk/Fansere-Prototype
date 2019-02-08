@@ -3,7 +3,7 @@ import { StyleSheet, Text } from 'react-native'
 
 export default class Teams extends React.Component {
 
-  render() {
+    render() {
     return (
       <Text style={{color: 'white'}}>
         Teams
