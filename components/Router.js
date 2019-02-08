@@ -11,7 +11,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 const TabNavigator = createBottomTabNavigator({
   Chat: Chatdisplay,
   Profile: Home,
-  SignUp: SignUp,
+  "Sign Up": SignUp,
   Schedule: Schedule,
   BarMap: BarMap
   },
@@ -41,9 +41,38 @@ const TabNavigator = createBottomTabNavigator({
   labelStyle: {
     fontSize: 14,
   },
-  style: {
-    backgroundColor: '#545454',
-    color: '#7ed957',
+  {
+  defaultNavigationOptions: ({ navigation }) => ({
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        const { routeName } = navigation.state;
+        let IconComponent = Icon;
+        let iconName;
+        if (routeName === 'Profile') {
+          iconName = 'home';
+        } else if (routeName === 'Chat') {
+          iconName = 'comments';
+        }
+        else if (routeName === 'Sign Up') {
+          iconName = 'user-plus';
+        }
+        else if (routeName === 'Schedule') {
+          iconName = 'bookmark';
+        }
+        return <IconComponent name={iconName} size={22} color={tintColor} paddingTop={10} />;
+      },
+    }),
+    tabBarOptions: {
+     activeTintColor: '#7ed957',
+     inactiveTintColor: '#ffffff',
+     labelStyle: {
+       fontSize: 14,
+   },
+   style: {
+     backgroundColor: '#545454',
+     color: '#7ed957',
+     paddingTop: 5
+   },
+ },
   },
 },
 })
