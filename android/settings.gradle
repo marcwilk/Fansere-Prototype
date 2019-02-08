@@ -2,12 +2,14 @@ rootProject.name = 'fansere_app'
 include ':react-native-maps'
 project(':react-native-maps').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-maps/lib/android')
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> d14054e65b5280e70e72a732842420aae9bdf483
 include ':react-native-vector-icons'
 project(':react-native-vector-icons').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-vector-icons/android')
-=======
 include ':react-native-image-picker'
 project(':react-native-image-picker').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-image-picker/android')
->>>>>>> c99a5fe1f09f355eb821271baa703c22454b2abc
 include ':react-native-gesture-handler'
 project(':react-native-gesture-handler').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-gesture-handler/android')
 

@@ -4,8 +4,11 @@ import android.app.Application;
 
 import com.facebook.react.ReactApplication;
 import com.airbnb.android.react.maps.MapsPackage;
+<<<<<<< HEAD
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+=======
+>>>>>>> d14054e65b5280e70e72a732842420aae9bdf483
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -26,9 +29,13 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+<<<<<<< HEAD
             new MapsPackage(),
             new VectorIconsPackage(),
             new RNGestureHandlerPackage()
+=======
+            new MapsPackage()
+>>>>>>> d14054e65b5280e70e72a732842420aae9bdf483
       );
     }
 

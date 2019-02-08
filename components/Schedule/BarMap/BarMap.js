@@ -3,6 +3,10 @@ import {StyleSheet, Text, View} from 'react-native';
 import { Header } from 'react-native-elements'
 import MapView from 'react-native-maps'
 import {Marker} from 'react-native-maps'
+<<<<<<< HEAD
+=======
+import Icon from 'react-native-vector-icons/FontAwesome';
+>>>>>>> d14054e65b5280e70e72a732842420aae9bdf483
 
 export default class BarMap extends React.Component {
 
@@ -48,6 +52,7 @@ export default class BarMap extends React.Component {
   render() {
     let userLocationMarker = null
       if(this.state.userLocation) {
+<<<<<<< HEAD
         userLocationMarker = <Marker title={this.state.userName} coordinate={this.state.userLocation} image={'https://www.bootdey.com/img/Content/avatar/avatar1.png'} style={{borderRadius: 50}}/>
       }
 
@@ -56,6 +61,15 @@ export default class BarMap extends React.Component {
     return (
       <View>
       <Header backgroundColor="rgb(126, 217, 75)"   centerComponent={{ text: 'Watch This Game', style: { color: '#fff', fontSize: 22, fontWeight: 'bold' } }} />
+=======
+        userLocationMarker = <Marker title={this.state.userName} coordinate={this.state.userLocation} pinColor='#545454'/>
+      }
+
+  const barLocations = this.state.barLocations.map(bar => <Marker title={bar.barName}  coordinate={bar} key={bar.id} pinColor='rgb(126, 217, 75)'/>)
+    return (
+      <View>
+      <Header backgroundColor="rgb(126, 217, 75)"  leftComponent={<Icon name="arrow-left" size={17} color="white" onPress={this.props.onPress}/>} centerComponent={{ text: 'Watch This Game', style: { color: '#fff', fontSize: 22, fontWeight: 'bold' } }} />
+>>>>>>> d14054e65b5280e70e72a732842420aae9bdf483
       <View style={styles.mapContainer}>
         <MapView  style={styles.map} region={this.state.userLocation} barLocations={this.state.barLocations}>
             {userLocationMarker}

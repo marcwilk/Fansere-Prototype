@@ -58,7 +58,11 @@ renderMap=(index)=>{
     this.state.games.map((game, index) => (
       <ListItem
         key={index}
+<<<<<<< HEAD
         onPress={this.renderMap.bind(this, index)}
+=======
+        onPress={this.props.onPress}
+>>>>>>> d14054e65b5280e70e72a732842420aae9bdf483
         title={`${game.away} ${game.awayScore}`}
         subtitle={`${game.home} ${game.homeScore}`}
         rightTitle={game.date}

@@ -5,12 +5,18 @@ import {Platform, StyleSheet, Text, View } from 'react-native'
 import { Nav } from './components/Router'
 
 
-type Props = {};
-export default class App extends Component<Props> {
+
+export default class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      
+    }
+  }
   render() {
     return (
       <View style={styles.container}>
-        <Nav />
+        <Nav userId={this.state.userId}/>
       </View>
     );
   }
