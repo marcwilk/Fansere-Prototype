@@ -16,32 +16,6 @@ const TabNavigator = createBottomTabNavigator({
   BarMap: BarMap
   },
   {
-    defaultNavigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused, horizontal, tintColor }) => {
-        const { routeName } = navigation.state;
-        let IconComponent = Icon;
-        let iconName;
-        if (routeName === 'Profile') {
-          iconName = 'arrow-left';
-          // Sometimes we want to add badges to some icons.
-          // You can check the implementation below.
-          // IconComponent = HomeIconWithBadge;
-        } else if (routeName === 'Chat') {
-          iconName = 'arrow-left';
-        }
-
-        // You can return any component that you like here!
-        return <IconComponent name={iconName} size={25} color={tintColor} />;
-      },
-    }),
-},
-  {tabBarOptions: {
-  activeTintColor: '#7ed957',
-  inactiveTintColor: '#ffffff',
-  labelStyle: {
-    fontSize: 14,
-  },
-  {
   defaultNavigationOptions: ({ navigation }) => ({
       tabBarIcon: ({ focused, horizontal, tintColor }) => {
         const { routeName } = navigation.state;
@@ -71,9 +45,8 @@ const TabNavigator = createBottomTabNavigator({
      backgroundColor: '#545454',
      color: '#7ed957',
      paddingTop: 5
-   },
- },
+    },
   },
 },
-})
+)
 export const Nav = createAppContainer(TabNavigator)
