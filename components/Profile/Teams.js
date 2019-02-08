@@ -17,7 +17,7 @@ export default class Teams extends React.Component {
     }
   }
 
-  render() {
+    render() {
     return (
       <ScrollView>
         <View style={styles.container}>

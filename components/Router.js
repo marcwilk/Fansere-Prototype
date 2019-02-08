@@ -5,6 +5,7 @@ import Chatdisplay from './Chat/Chatdisplay'
 import SignUp from './SignUp/SignUp'
 import Home from './Profile/Home'
 import Schedule from './Schedule/Schedule'
+import BarMap from './Schedule/BarMap/BarMap'
 import Icon from 'react-native-vector-icons/FontAwesome'
 
 const TabNavigator = createBottomTabNavigator({
@@ -12,6 +13,7 @@ const TabNavigator = createBottomTabNavigator({
   Profile: Home,
   "Sign Up": SignUp,
   Schedule: Schedule,
+  BarMap: BarMap
   },
   {
   defaultNavigationOptions: ({ navigation }) => ({
@@ -43,21 +45,8 @@ const TabNavigator = createBottomTabNavigator({
      backgroundColor: '#545454',
      color: '#7ed957',
      paddingTop: 5
-   },
- },
-  },
-{
-  tabBarOptions: {
-    activeTintColor: '#7ed957',
-    inactiveTintColor: '#ffffff',
-    labelStyle: {
-      fontSize: 14,
-    },
-    style: {
-      backgroundColor: '#545454',
-      color: '#7ed957',
     },
   },
-});
-
+},
+)
 export const Nav = createAppContainer(TabNavigator)
