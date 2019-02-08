@@ -12,8 +12,7 @@ const TabNavigator = createBottomTabNavigator({
   Chat: Chatdisplay,
   Profile: Home,
   "Sign Up": SignUp,
-  Schedule: Schedule,
-  BarMap: BarMap
+  Schedule: Schedule
   },
   {
   defaultNavigationOptions: ({ navigation }) => ({
