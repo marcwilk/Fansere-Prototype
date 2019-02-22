@@ -1,10 +1,10 @@
 <p align="center">
-<a href="https://www.fansere.com/"><img src="imgages/logo.png" target="_blank" title="Fansere" alt="Fansere" width="35%"></a>
+<a href="https://www.fansere.com/"><img src="images/logo.png" target="_blank" title="Fansere" alt="Fansere" width="35%"></a>
 </p>
 
 # Fansere - Sports Meetup App
 
-[Deployed link](coming soon)
+(Deployed link coming soon)
 
 ## Table of Contents
 
@@ -32,6 +32,6 @@ $color5: #f4f4f4; // accent color
 $color6: #545454; // alt background
 ```
 
-### Planning 
+### Planning
 
 (https://trello.com/b/DvXU9dNo/capstone)
