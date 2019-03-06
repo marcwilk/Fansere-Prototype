@@ -36,24 +36,24 @@ $color6: #545454; // alt background
 
 (https://trello.com/b/DvXU9dNo/capstone)
 
-1. In App Chat (Sean)
-More DB
-Post routes
-2. Profile Page (Marc, Owen)
-Picture
-Favorite teams (up to 6)
-Tag line
-Location
-Edit bio form
-Watch party only
-3. Sign Up (Ben)
-FB
-4. Map with sports logos and bar locations (Will)
-Hard code bars/restaurants
-Pin locations
-5. Sports Teams Selection Lists ()
-Swipe/add functionality with all logos, colors, Icons
-Get route/form
-6. Backend Clean up and wire to front end (Owen/Sean)
-Update to all current info
-Chat database
+1. In App Chat (Sean)  
+- More DB  
+- Post routes  
+2. Profile Page (Marc, Owen)  
+- Picture  
+- Favorite teams (up to 6)  
+- Tag line  
+- Location  
+- Edit bio form  
+- Watch party only  
+3. Sign Up (Ben)  
+- OAuth
+4. Map with sports logos and bar locations (Will)  
+- Hard code bars/restaurants  
+- Pin locations  
+5. Sports Teams Selection Lists    
+- Swipe/add functionality with all logos, colors, Icons  
+- Get route/form  
+6. Backend Clean up and wire to front end (Owen/Sean)  
+- Update to all current info  
+- Chat database  
