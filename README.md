@@ -62,10 +62,10 @@ $color6: #545454; // alt background
 ### Technologies
 
 <a href="https://facebook.github.io/react-native/"><img src="images/react-original.svg" target="_blank" title="React" alt="React" width="15%"></a>
-<a href="https://www.javascript.com/"><img src="images/postgresql-original.svg" target="_blank" title="JS" alt="JS" width="15%"></a>
-<a href="https://www.postgresql.org/"><img src="images/javascript-original.svg" target="_blank" title="PSQL" alt="PSQL" width="15%"></a>
+<a href="https://www.javascript.com/"><img src="images/javascript-original.svg" target="_blank" title="JS" alt="JS" width="15%"></a>
+<a href="https://www.postgresql.org/"><img src="images/postgresql-original.svg" target="_blank" title="PSQL" alt="PSQL" width="15%"></a>
 <a href="https://www.npmjs.com/package/express"><img src="images/express-original.svg" target="_blank" title="Express" alt="Express" width="15%"></a>
-<a href="https://nodejs.org/en/"><img src="images/node-original.svg" target="_blank" title="Node" alt="Node" width="15%"></a>
+<a href="https://nodejs.org/en/"><img src="images/nodejs-original.svg" target="_blank" title="Node" alt="Node" width="15%"></a>
 <a href="https://www.android.com/"><img src="images/android-original.svg" target="_blank" title="Android" alt="Android" width="15%"></a>
 <a href="https://www.apple.com/"><img src="images/apple-original.svg" target="_blank" title="Apple" alt="Apple" width="15%"></a>
 <a href="https://html.com/"><img src="images/html5-original.svg" target="_blank" title="HTML" alt="HTML" width="15%"></a>
