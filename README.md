@@ -4,7 +4,7 @@
 
 # Fansere - Sports Meetup App
 
-(Deployed link coming soon)
+(https://www.youtube.com/watch?v=LgvtEnydU1A&feature=youtu.be)
 
 ## Table of Contents
 
