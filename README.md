@@ -9,6 +9,7 @@
 ## Table of Contents
 
 - [Installation](#installation)
+- [About](#about)
 - [Style](#style)
 - [Planning](#planning)
 - [Technologies](#technologies)
@@ -18,7 +19,12 @@
 Step One: Clone this repo to your local machine  
 Step Two: npm install  
 Step Three: npm start  
-Step Four: react-native run-android OR react-native run-ios
+Step Four: react-native run-android OR react-native run-ios  
+
+### About
+
+Full Stack Sports App for Client  
+Fellow fans at your fingertip. A premier mobile application to find sports fans of your favorite teams, wherever you are. Fansere gives you home field advantage with a click of a button. Fansere provides you the opportunity to match with other fans of your favorite teams, pinpoint game-watching locations, and once connected with fellow fans, reach out via in-app chat to plan where to watch the game.
 
 ### Style
 
@@ -60,6 +66,8 @@ $color6: #545454; // alt background
 - Chat database  
 
 ### Technologies
+
+ReactNative, JavaScript, PostgreSQL, Express, Node, NPM, Android Studio, Visual Studio Code, HTML, CSS, ReactNative Elements, ReactNative Navigation, ReactNative Maps API, NHL API, Knex, Fetch, OAuth
 
 <a href="https://facebook.github.io/react-native/"><img src="images/react-original.svg" target="_blank" title="React" alt="React" width="15%"></a>
 <a href="https://www.javascript.com/"><img src="images/javascript-original.svg" target="_blank" title="JS" alt="JS" width="15%"></a>
