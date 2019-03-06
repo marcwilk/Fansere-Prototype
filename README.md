@@ -66,6 +66,7 @@ $color6: #545454; // alt background
 <a href="https://www.postgresql.org/"><img src="images/postgresql-original.svg" target="_blank" title="PSQL" alt="PSQL" width="15%"></a>
 <a href="https://www.npmjs.com/package/express"><img src="images/express-original.svg" target="_blank" title="Express" alt="Express" width="15%"></a>
 <a href="https://nodejs.org/en/"><img src="images/nodejs-original.svg" target="_blank" title="Node" alt="Node" width="15%"></a>
+<a href="https://npmjs.com"><img src="images/npm-original-wordmark.svg" target="_blank" title="NPM" alt="NPM" width="15%"></a>
 <a href="https://www.android.com/"><img src="images/android-original.svg" target="_blank" title="Android" alt="Android" width="15%"></a>
 <a href="https://www.apple.com/"><img src="images/apple-original.svg" target="_blank" title="Apple" alt="Apple" width="15%"></a>
 <a href="https://html.com/"><img src="images/html5-original.svg" target="_blank" title="HTML" alt="HTML" width="15%"></a>
