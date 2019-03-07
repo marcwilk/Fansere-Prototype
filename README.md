@@ -67,7 +67,7 @@ $color6: #545454; // alt background
 
 ### Technologies
 
-ReactNative, JavaScript, PostgreSQL, Express, Node, NPM, Android Studio, Visual Studio Code, HTML, CSS, ReactNative Elements, ReactNative Navigation, ReactNative Maps API, NHL API, Knex, Fetch, OAuth
+ReactNative, JavaScript, PostgreSQL, Express, Node, NPM, Android Studio, Xcode, HTML, CSS, ReactNative Elements, ReactNative Navigation, ReactNative Maps API, NHL API, Knex, Fetch, OAuth
 
 <a href="https://facebook.github.io/react-native/"><img src="images/react-original.svg" target="_blank" title="React" alt="React" width="15%"></a>
 <a href="https://www.javascript.com/"><img src="images/javascript-original.svg" target="_blank" title="JS" alt="JS" width="15%"></a>
